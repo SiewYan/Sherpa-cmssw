@@ -20,7 +20,7 @@
    checkout the clone
 
    ```
-   git clone https://github.com/SiewYan/Sherpa-Generation.git
+   git clone https://github.com/SiewYan/SherpaGeneration.git
    scram b -j8
    ```
 
