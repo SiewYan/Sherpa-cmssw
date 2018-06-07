@@ -27,7 +27,7 @@
 ## Generate Sherpack
 
    ```
-   cd Sherpa-Generation/Generator/test
+   cd SherpaGeneration/Generator/test
    sh run_MakeSherpaLibs.sh
    sh run_PrepareSherpaLibs.sh
    sh generateValidation.sh sherpa_ZtoEE_0j_OpenLoops_13TeV

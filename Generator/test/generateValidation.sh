@@ -23,7 +23,7 @@ scp ${OTAG}_MASTER_cff.py ../python
 eval cd ../python; scram b
 eval cd ../test
 
-cmsDriver.py MY/PROJECT/python/${OTAG}_MASTER_cff.py \
+cmsDriver.py SherpaGeneration/Generator/python/${OTAG}_MASTER_cff.py \
     -n ${NEVTS} --mc --no_exec --python_filename cmsrun_${OTAG}_MASTER_cff.py \
     -s GEN,VALIDATION:genvalid_all --datatier GEN-SIM,DQMIO --eventcontent RAWSIM,DQM \
     --conditions auto:run2_mc_FULL --beamspot Realistic8TeVCollision
