@@ -2,6 +2,9 @@
 
 set -e
 
+# path to submit jobs                                                                                                                                                                  
+WORKDIR=`pwd -P`
+
 OTAG=$1
 
 BATCH=LSF
@@ -18,6 +21,8 @@ fi
 ODIR=${WORKDIR}/samples/${OTAG}/
 
 mkdir -p ${ODIR}
+
+sed -e "s,XXX,${WORKDIR}/," ${OTAG}_MASTER_cff.py > ${OTAG}_MASTER_cff.py_ ; mv ${OTAG}_MASTER_cff.py_ ${OTAG}_MASTER_cff.py
 
 scp ${OTAG}_MASTER_cff.py ../python
 eval cd ../python; scram b
