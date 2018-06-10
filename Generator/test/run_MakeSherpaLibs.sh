@@ -1,7 +1,10 @@
 #!/bin/bash
 
-NAME="ZtoEE_0j_OpenLoops_13TeV"
+ls Run.dat_*
+echo "Please enter the tag of available Run.dat: Format Run.dat_[TAG]"
+read NAME
 
-#./MakeSherpaLibs.sh -p ${NAME} -o LBCR -v
+echo "./MakeSherpaLibs.sh -p ${NAME} -o LBCR -v -m mpirun -M '-n 9'"
+sleep 3
 
 ./MakeSherpaLibs.sh -p ${NAME} -o LBCR -v -m mpirun -M '-n 9'
