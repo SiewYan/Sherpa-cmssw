@@ -8,6 +8,6 @@ SherpaWeightsBlock = cms.PSet(
                   'NTrials'
     ),
     SherpaVariationWeights = cms.vstring(
-        'MUR1_MUF1_PDF306038'
+        'MUR0.5_MUF0.5_PDF292000'
         )
 )
