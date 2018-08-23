@@ -5,8 +5,8 @@
    Setup CMSSW environment, using Sherpa v2.2.4; OpenLoops v1.3.1; BlackHat v0.9.9
 
    ```
-   scram project CMSSW_9_3_1
-   cd CMSSW_9_3_1/src
+   scram project CMSSW_9_4_8
+   cd CMSSW_9_4_8/src
    cmsenv	 
    export TOPDIR=$PWD
    ```
