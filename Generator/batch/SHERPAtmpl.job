@@ -67,7 +67,7 @@ sh run_MakeSherpaLibs.sh INPUT1 &> Log_step1
 echo "Running run_PrepareSherpaLibs.sh INPUT1 INPUT2"
 sh run_PrepareSherpaLibs.sh INPUT1 INPUT2 &> Log_step2
 
-#copy all library files
+#copy all produced file to EOS
 mkdir -p ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_crdE.tgz ${SherpackLocation}/SHERPA_INPUT1   
 scp sherpa_INPUT1_libs.tgz  ${SherpackLocation}/SHERPA_INPUT1
@@ -75,23 +75,23 @@ scp sherpa_INPUT1_MASTER.tgz ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_crss.tgz  ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_logL.tgz  ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_migr.tgz ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1.md5 ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_13TeV_MASTER.md5 ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_MASTER_cff.py ${SherpackLocation}/SHERPA_INPUT1
-
+scp MPI_Cross_Sections.dat ${SherpackLocation}/SHERPA_INPUT1
 scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
+
 #UNLESS you wanna generate some event file here
-
-#Unpack gridpack and generate events
-#echo "untar gridpack"
-#tar xf INPUT1_LO_MZprime-INPUT3_Mhs-INPUT4_Mchi-INPUT2_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_tarball.tar.xz
-#sed "s/reweight=ON/reweight=OFF/g" runcmsgrid.sh > test.sh
-#echo "Turn OFF Reweighting"
-#echo "Generate events"
-##./runcmsgrid.sh ${nevent} 123456 4
-#chmod +x test.sh
-#./test.sh ${nevent} 123456 4
-
-#cp cmsgrid_final.lhe ${LHE}/INPUT1_LO_MZprime-INPUT3_Mhs-INPUT4_Mchi-INPUT2_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.lhe
+scp sherpa_INPUT1_MASTER_cff.py ../python
+cd ..
+scram b 
+cd test
+echo "Running cmsDriver"
+cmsDriver.py SherpaGeneration/Generator/python/sherpa_INPUT1_MASTER_cff.py -s GEN -n ${nevent} --no_exec --conditions auto:mc --eventcontent RAWSIM 
+echo "Generating Events"
+cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py
+echo "DONE --> Output look like this"
+ls
+scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
 
 #
 #----------------------------------------------------------
