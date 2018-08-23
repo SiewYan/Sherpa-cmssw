@@ -22,7 +22,7 @@ echo "Step 1 : Setting the environment"
 export SCRAM_ARCH=slc6_amd64_gcc630
 export CMSSW_SRC=/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_3_1/src ##terminate at package SherpaGeneration
 export CODE_SRC=/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_3_1/src/SherpaGeneration/Generator/batch ##CURRENT
-export RUN_CARD=/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_3_1/src/SherpaGeneration/Generator/batch/../data/Run.dat_ZtoEE_0j_OpenLoops_13TeV
+export RUN_CARD=Run.dat_ZtoEE_0j_OpenLoops_13TeV
 export SherpackLocation=/eos/user/${USER:0:1}/$USER
 export CMSSWRELEASE=CMSSW_9_4_8
 export nevent=2000
@@ -53,16 +53,19 @@ cd ${CMSSWRELEASE}/src
 eval `scramv1 runtime -sh`
 
 #populate with necessary packages.
-git cms-addpkg GeneratorInterface/SherpaInterface
+git cms-addpkg -q GeneratorInterface/SherpaInterface
 #copy nessecary files
-cp -r ${CODE_SRC}/SherpaGeneration .
+cp -r ${CMSSW_SRC}/SherpaGeneration .
 scram b -j6
 
 #Generate Sherpack
 cd SherpaGeneration/Generator/test
-scp ${RUN_CARD} .
-sh run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV
-sh run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py
+scp ../data/${RUN_CARD} .
+ls
+echo "Running run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV"
+sh run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV &> Log_step1
+echo "Running run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py"
+sh run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py &> Log_step2
 
 #copy all library files
 mkdir -p ${SherpackLocation}/SHERPA_ZtoEE_0j_OpenLoops_13TeV
@@ -75,6 +78,7 @@ scp sherpa_ZtoEE_0j_OpenLoops_13TeV_migr.tgz ${SherpackLocation}/SHERPA_ZtoEE_0j
 scp sherpa_ZtoEE_0j_OpenLoops_13TeV.md5 ${SherpackLocation}/SHERPA_ZtoEE_0j_OpenLoops_13TeV
 scp sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER_cff.py ${SherpackLocation}/SHERPA_ZtoEE_0j_OpenLoops_13TeV
 
+scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_ZtoEE_0j_OpenLoops_13TeV
 #UNLESS you wanna generate some event file here
 
 #Unpack gridpack and generate events
