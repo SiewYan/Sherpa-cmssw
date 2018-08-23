@@ -1,0 +1,106 @@
+#!/bin/sh -f
+#
+# ---------------------------------------------------------
+# LSF parameters
+# ---------------------------------------------------------
+#
+set nonomatch
+echo ""
+echo "Job is running on `uname -a`"
+echo "Job started on `date`"
+echo ""
+echo "Job has been submitted from : " $LS_SUBCWD
+#if ( ${OS} != "Solaris" && ${OS} != "Linux" ) exit
+#setenv OS_VERS Linux__2.6
+#
+#----------------------------------------------------------
+# S e t t h e r u n t i m e e n v i r o n m e n t
+#----------------------------------------------------------
+#
+echo "Step 1 : Setting the environment"
+#export SCRAM_ARCH=slc6_amd64_gcc493
+export SCRAM_ARCH=slc6_amd64_gcc630
+export CMSSW_SRC=INPUT01/src ##terminate at package SherpaGeneration
+export CODE_SRC=INPUT02 ##CURRENT
+export RUN_CARD=INPUT02/../data/Run.dat_INPUT1
+export SherpackLocation=/eos/user/${USER:0:1}/$USER
+export CMSSWRELEASE=CMSSW_9_4_8
+export nevent=XX_NEVENT_XX
+#rm -rf ${CODE_SRC}/CMSSW_INPUT1_mphi_INPUT3_mchi_INPUT2_mhs_INPUT4.job
+
+echo "- - - - - PATH SETTING- - - - -"
+echo "SCRAM_ARCH is : " ${SCRAM_ARCH}
+echo "Current Directory is : " ${CODE_SRC}
+echo "WorkDir is : " ${WORKDIR}
+echo "Run card is : " ${RUN_CARD}
+echo "Sherpack Location is : " ${SherpackLocation}
+echo "Disk space on this batch machine:"
+df -h
+#
+#----------------------------------------------------------
+# Run CMSSW
+#----------------------------------------------------------
+#
+echo "Step 2 : Run"
+#####################################
+# Step-1: #
+#####################################
+echo "Start Step-1: Generator"
+cd ${WORKDIR}
+scramv1 project CMSSW ${CMSSWRELEASE}
+echo "scramv1 complete"
+cd ${CMSSWRELEASE}/src
+eval `scramv1 runtime -sh`
+
+#populate with necessary packages.
+git cms-addpkg GeneratorInterface/SherpaInterface
+#copy nessecary files
+cp -r ${CODE_SRC}/SherpaGeneration .
+scram b -j6
+
+#Generate Sherpack
+cd SherpaGeneration/Generator/test
+scp ${RUN_CARD} .
+sh run_MakeSherpaLibs.sh INPUT1
+sh run_PrepareSherpaLibs.sh INPUT1 INPUT2
+
+#copy all library files
+mkdir -p ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_crdE.tgz ${SherpackLocation}/SHERPA_INPUT1   
+scp sherpa_INPUT1_libs.tgz  ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_MASTER.tgz ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_crss.tgz  ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_logL.tgz  ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_migr.tgz ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1.md5 ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_MASTER_cff.py ${SherpackLocation}/SHERPA_INPUT1
+
+#UNLESS you wanna generate some event file here
+
+#Unpack gridpack and generate events
+#echo "untar gridpack"
+#tar xf INPUT1_LO_MZprime-INPUT3_Mhs-INPUT4_Mchi-INPUT2_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_tarball.tar.xz
+#sed "s/reweight=ON/reweight=OFF/g" runcmsgrid.sh > test.sh
+#echo "Turn OFF Reweighting"
+#echo "Generate events"
+##./runcmsgrid.sh ${nevent} 123456 4
+#chmod +x test.sh
+#./test.sh ${nevent} 123456 4
+
+#cp cmsgrid_final.lhe ${LHE}/INPUT1_LO_MZprime-INPUT3_Mhs-INPUT4_Mchi-INPUT2_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.lhe
+
+#
+#----------------------------------------------------------
+# Clear job and log
+#----------------------------------------------------------
+#
+rm -rf ${CODE_SRC}/Log_*
+rm -rf ${CODE_SRC}/LSF*
+rm -rf ${CODE_SRC}/core*
+rm -rf /afs/cern.ch/user/${USER:0:1}/${USER}/LSF*
+cd ${WORKDIR}
+rm -rf CMSSW*
+echo ""
+echo "Job end `date`"
+echo ""
+exit ${status}
