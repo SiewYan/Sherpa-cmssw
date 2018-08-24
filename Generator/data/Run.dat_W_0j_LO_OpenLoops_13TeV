@@ -27,32 +27,32 @@
   HEPMC_USE_NAMED_WEIGHTS=1;
   % https://github.com/cms-sw/genproductions/blob/mg26x/MetaData/pdflist_4f_2017.dat
   SCALE_VARIATIONS 1.,1. 1.,2. 1.,0.5 2.,1. 2.,2. 2.,0.5 0.5,1. 0.5,2. 0.5,0.5
-  PDF_VARIATIONS NNPDF31_nnlo_as_0118_nf_4[all] \
-  CT10nlo_nf4[all] \
-  CT14nnlo_NF4[all] \
-  CT14nlo_NF4[all] \
-  CT14lo_NF4[all] \
-  MSTW2008lo68cl_nf4[all] \
-  MSTW2008nlo68cl_nf4[all] \
-  MSTW2008nlo_mbrange_nf4[all] \
-  MSTW2008nnlo68cl_nf4[all] \
-  MSTW2008nnlo_mbrange_nf4[all] \
-  MMHT2014nlo68cl_nf4[all] \
-  MMHT2014nlo68clas118_nf4[all] \
-  MMHT2014nlo_asmzsmallrange_nf4[all] \
-  MMHT2014nlo_mcrange_nf4[all] \
-  MMHT2014nlo_mbrange_nf4[all] \
-  MMHT2014nnlo68cl_nf4[all] \
-  MMHT2014nnlo_asmzsmallrange_nf4[all] \
-  MMHT2014nnlo_mcrange_nf4[all] \
-  MMHT2014nnlo_mbrange_nf4[all] \
-  PDF4LHC15_nlo_nf4_30[all] \
-  NNPDF31_nnlo_hessian_pdfas[all] \
-  NNPDF31_nlo_as_0118_nf_4[all] \
-  NNPDF30_nlo_as_0118_nf_4[all] \
-  NNPDF30_lo_as_0118_nf_4[all] \
-  NNPDF30_lo_as_0130_nf_4[all] \
-  NNPDF30_nlo_nf_4_pdfas[all] \
+  PDF_VARIATIONS NNPDF31_nnlo_as_0118_nf_4[all]
+  CT10nlo_nf4[all] 
+  CT14nnlo_NF4[all] 
+  CT14nlo_NF4[all] 
+  CT14lo_NF4[all] 
+  MSTW2008lo68cl_nf4[all] 
+  MSTW2008nlo68cl_nf4[all] 
+  MSTW2008nlo_mbrange_nf4[all] 
+  MSTW2008nnlo68cl_nf4[all] 
+  MSTW2008nnlo_mbrange_nf4[all] 
+  MMHT2014nlo68cl_nf4[all] 
+  MMHT2014nlo68clas118_nf4[all] 
+  MMHT2014nlo_asmzsmallrange_nf4[all] 
+  MMHT2014nlo_mcrange_nf4[all] 
+  MMHT2014nlo_mbrange_nf4[all] 
+  MMHT2014nnlo68cl_nf4[all] 
+  MMHT2014nnlo_asmzsmallrange_nf4[all] 
+  MMHT2014nnlo_mcrange_nf4[all] 
+  MMHT2014nnlo_mbrange_nf4[all] 
+  PDF4LHC15_nlo_nf4_30[all] 
+  NNPDF31_nnlo_hessian_pdfas[all] 
+  NNPDF31_nlo_as_0118_nf_4[all] 
+  NNPDF30_nlo_as_0118_nf_4[all] 
+  NNPDF30_lo_as_0118_nf_4[all] 
+  NNPDF30_lo_as_0130_nf_4[all] 
+  NNPDF30_nlo_nf_4_pdfas[all] 
   NNPDF30_nnlo_nf_4_pdfas[all];
 
   % collider setup
