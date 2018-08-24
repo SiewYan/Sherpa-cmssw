@@ -65,9 +65,9 @@ function build_python_cff() {
   echo "  filterEfficiency = cms.untracked.double(1.0),"                   >> ${cfffilename}
   echo "  crossSection = cms.untracked.double(-1),"                        >> ${cfffilename}
   echo "  SherpaProcess = cms.string('"${process}"'),"                     >> ${cfffilename}
-  echo "  SherpackLocation = cms.string('XXX'),"                            >> ${cfffilename}
+  echo "  SherpackLocation = cms.string('./'),"                            >> ${cfffilename}
   echo "  SherpackChecksum = cms.string('"${checksum}"'),"                 >> ${cfffilename}
-  echo "  FetchSherpack = cms.bool(True),"                                 >> ${cfffilename}
+  echo "  FetchSherpack = cms.bool(False),"                                 >> ${cfffilename}
 ##  if [ "${imode}" = "PROD" ]; then
   echo "  SherpaPath = cms.string('./'),"                                  >> ${cfffilename}
   echo "  SherpaPathPiece = cms.string('./'),"                             >> ${cfffilename}
