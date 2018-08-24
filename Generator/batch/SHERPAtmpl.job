@@ -68,6 +68,9 @@ echo "Running run_PrepareSherpaLibs.sh INPUT1 INPUT2"
 sh run_PrepareSherpaLibs.sh INPUT1 INPUT2 &> Log_step2
 
 #copy all produced file to EOS
+if [ -e "${SherpackLocation}/SHERPA_INPUT1" ];then
+    rm ${SherpackLocation}/SHERPA_INPUT1
+fi
 mkdir -p ${SherpackLocation}/SHERPA_INPUT1
 scp sherpa_INPUT1_crdE.tgz ${SherpackLocation}/SHERPA_INPUT1   
 scp sherpa_INPUT1_libs.tgz  ${SherpackLocation}/SHERPA_INPUT1
