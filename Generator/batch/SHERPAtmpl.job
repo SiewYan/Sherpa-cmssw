@@ -84,6 +84,9 @@ scp MPI_Cross_Sections.dat ${SherpackLocation}/SHERPA_INPUT1
 scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
 
 #UNLESS you wanna generate some event file here
+#assgin sherpack to current dir;
+#HERE=`pwd -p`
+#sed -e "s,XXX,${HERE}/," sherpa_INPUT1_MASTER_cff.py
 scp sherpa_INPUT1_MASTER_cff.py ../python
 cd ..
 scram b 
