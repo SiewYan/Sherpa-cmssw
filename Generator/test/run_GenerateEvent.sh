@@ -14,7 +14,7 @@ ODIR=${WORKDIR}/samples
 NEVTS=5000
 
 if [ $# -eq 0 ];then
-    echo "generateValidation: No arguments supplied, please parse the process name [PROCNAME]: [PROCNAME]_MASTER_cff.py"
+    echo "run_Generate Event: No arguments supplied, please parse the process name [PROCNAME]: [PROCNAME]_MASTER_cff.py"
     exit 0
 fi
 
