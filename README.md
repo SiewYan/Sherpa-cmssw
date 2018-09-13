@@ -26,11 +26,26 @@
 
 ## Generate Sherpack
 
+   ### On head
+
    ```
    cd SherpaGeneration/Generator/test
    sh run_MakeSherpaLibs.sh
    sh run_PrepareSherpaLibs.sh
    sh generateValidation.sh sherpa_ZtoEE_0j_OpenLoops_13TeV
+   ```
+
+   ### Using LSF Batch
+
+   ```
+   cd SherpaGeneration/Generator/batch
+   sh run.sh #running on ZtoEE_0j_OpenLoops_13TeV with weight ExtendedSherpaWeights_cfi.py
+   ```
+
+   By default, your job is submitted to 1 day queue, checking your LSF job status:
+
+   ```
+   bqueue
    ```
 
 ## Reference
