@@ -47,6 +47,18 @@
    ```
    bqueue
    ```
+   
+   You will find a bunch of log file to check the health of the sherpack,sherpacks, and fragment file in EOS
+
+   ```
+   #ls /eos/user/U/USERNAME/SHERPA_ZtoEE_0j_OpenLoops_13TeV/
+   Log_step1                                               sherpa_ZtoEE_0j_OpenLoops_13TeV_crdE.tgz
+   Log_step2                                               sherpa_ZtoEE_0j_OpenLoops_13TeV_crss.tgz
+   MPI_Cross_Sections.dat                                  sherpa_ZtoEE_0j_OpenLoops_13TeV_libs.tgz
+   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER.tgz              sherpa_ZtoEE_0j_OpenLoops_13TeV_logL.tgz
+   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER_cff.py           sherpa_ZtoEE_0j_OpenLoops_13TeV_migr.tgz
+   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER_cff_py_GEN.root   
+   ```
 
 ## Reference
 
