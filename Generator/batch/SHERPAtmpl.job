@@ -98,6 +98,8 @@ cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py
 echo "DONE --> Output look like this"
 ls
 scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
+echo "====== Sherpack is located at ====="
+echo "${SherpackLocation}/SHERPA_INPUT1"
 
 #
 #----------------------------------------------------------

@@ -14,7 +14,7 @@
    checkout the SherpaInterface: 
 
    ```
-   git cms-addpkg GeneratorInterface/SherpaInterface
+   git cms-addpkg -q GeneratorInterface/SherpaInterface
    ```
 
    checkout the clone
@@ -23,16 +23,22 @@
    git clone https://github.com/SiewYan/SherpaGeneration.git
    scram b -j8
    ```
+   
+   The version of Sherpa Interfaced with the cmssw can be revealed
 
-## Generate Sherpack
+   ```
+   scram tool info Sherpa
+   ```
+
+## Generate Sherpack on Z+jets
 
    ### On head
 
    ```
    cd SherpaGeneration/Generator/test
-   sh run_MakeSherpaLibs.sh
-   sh run_PrepareSherpaLibs.sh
-   sh generateValidation.sh sherpa_ZtoEE_0j_OpenLoops_13TeV
+   sh run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV
+   sh run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py
+   sh run_GenerateEvent.sh sherpa_ZtoEE_0j_OpenLoops_13TeV
    ```
 
    ### Using LSF Batch
