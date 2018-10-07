@@ -13,6 +13,19 @@
      - Loop Generator: ```OpenLoop```
      - MI Generator  : ```Amisic```
 
+   - Run condition:
+     - Number of events: ```EVENTS 1M```
+     - 13 TeV
+     - 5 Flavor: ```MASSIVE_PS 4 5```
+     - Default scale: ```FSF:=1., RSF:=1., QSF:=1.```
+     - Scale setters: ```SCALES METS{FSF*MU_F2}{RSF*MU_R2}{QSF*MU_Q2};```
+     - Event Generation mode: ```Unweighted```
+     - LO/NLO toggled via: ```LJET```
+     - Exclude tau from lepton container: ```MASSIVE[15] 1```
+     - PDFID: ```PDF_SET = NNPDF31_nnlo_hessian_pdfas```
+     - No scale variation choice.
+     - Matrix element level Cuts at respective Boson mass window: ```(selector)```     
+
    - Processes:
    
    | Processes | Accuracy | Runcard | Madgraph Validation | Data Validation |  
