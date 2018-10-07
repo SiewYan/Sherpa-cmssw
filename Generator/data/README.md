@@ -14,7 +14,7 @@
 
    - Processes:
    
-   | Processes | Accuracy | Runcard | Madgraph Validation | Data (Rivet) Validation |  
+   | Processes | Accuracy | Runcard | Madgraph Validation | Data Validation |  
    | --- | --- | --- | --- | --- |
    | Z(ee)      | LO: NJET:=0, LJET:=0; NLO: NJET:=0, LJET:=2 | [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV); [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV) | | |
    | Z(ee)+jets | LO: NJET:=2, LJET:=0. | [ZtoEE_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_LO_OpenLoops_13TeV) | | |
