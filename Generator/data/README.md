@@ -5,13 +5,19 @@
    In order to perform a sensible comparison between Sherpa and Madgraph MC generator, a benchmark runcard is needed between two MC generators.
 
 ## Standard Candle processes under study:
+   
+   - Generator choice:
+     - NLO_QCD_Mode: MC@NLO
+     - Matrix Element Generator: Amegic
+     - Real Subtracted NLO Generator: Comix
+     - Loop Generator: OpenLoop
 
    | Processes | Accuracy | Runcard | Madgraph Validation | Data (Rivet) Validation |  
    | --- | --- | --- | --- | --- |
    | Z(ee)      | LO: NJET:=0; LJET:=0; | Run.dat_ZtoEE_0j_OpenLoops_13TeV | | |
    | Z(ee)+jets | LO: NJET:=2; LJET:=0; | Run.dat_ZtoEE_2j_OpenLoops_13TeV | | |
-   | W          | LO | | | |
-   | W+jets     | LO | | | |  
+   | W          | LO: NJET:=0; LJET:=0; | Run.dat_W_0j_LO_OpenLoops_13TeV  | | |
+   | W+jets     | LO: NJET:=0; LJET:=0; | Run.dat_W_2j_LO_OpenLoops_13TeV  | | |  
    | QCD        | LO | | | |
    | Gamma+jets | LO | | | |
    | DY+jets    | LO | | | |

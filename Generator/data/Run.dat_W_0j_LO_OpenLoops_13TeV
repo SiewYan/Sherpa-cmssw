@@ -63,7 +63,7 @@
 (processes){
   % https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.5.html#LHC_005fWJets		
   % YOUR INPUT IS NEEDED HERE 
-  Process 93 93 -> 90 91 ;
+  Process 93 93 -> 90 91 93{NJET};
   Order (*,2);
   NLO_QCD_Mode MC@NLO {LJET};
   ME_Generator Amegic {LJET};
