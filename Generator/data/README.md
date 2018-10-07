@@ -18,12 +18,12 @@
    | Processes | Accuracy | Runcard | Madgraph Validation | Data Validation |  
    | --- | --- | --- | --- | --- |
    | Z(ee)      | LO | [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV) | | |
-   | Z(ee)+jets | LO/NLO | [ZtoEE_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_LO_OpenLoops_13TeV) | | |
-   | Z(mm)+jets | NLO |  [ZtoMM_2j_NLO_OpenLoops_CKKW_13TeV]() | | |
-   | W          | LO: NJET:=0, LJET:=0. | [W_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_0j_LO_OpenLoops_13TeV)  | | |
-   | W+jets     | LO: NJET:=2, LJET:=0. | [W_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_2j_LO_OpenLoops_13TeV)  | | |  
-   | W(mn)      | LO: NJET:=0, LJET:=0. | [WtoMNu_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_0j_LO_OpenLoops_13TeV)  | | |
-   | W(mn)+jets | LO: NJET:=2, LJET:=0. | [WtoMNu_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_2j_LO_OpenLoops_13TeV)  | | |
+   | Z(ee)+jets | LO/NLO | [ZtoEE_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_LO_OpenLoops_13TeV) [ZtoEE_2j_NLO_OpenLoops_CKKW_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_NLO_OpenLoops_CKKW_13TeV) | | |
+   | Z(mm)+jets | NLO |  [ZtoMM_2j_NLO_OpenLoops_CKKW_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoMM_2j_NLO_OpenLoops_CKKW_13TeV) | | |
+   | W          | LO | [W_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_0j_LO_OpenLoops_13TeV)  | | |
+   | W+jets     | LO | [W_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_2j_LO_OpenLoops_13TeV)  | | |  
+   | W(mn)      | LO/NLO | [WtoMNu_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_0j_LO_OpenLoops_13TeV) | | |
+   | W(mn)+jets | LO/NLO | [WtoMNu_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_2j_LO_OpenLoops_13TeV) [WtoMNu_2j_NLO_OpenLoops_CKKW_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_2j_NLO_OpenLoops_CKKW_13TeV)  | | |
    | QCD        | LO | | | |
    | Gamma+jets | LO | | | |
    | DY+jets    | LO | | | |
