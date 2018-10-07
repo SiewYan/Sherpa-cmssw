@@ -7,21 +7,23 @@
 ## Standard Candle processes under study:
    
    - Generator choice:
-     - NLO_QCD_Mode: MC@NLO
-     - Matrix Element Generator: Amegic
-     - Real Subtracted NLO Generator: Comix
-     - Loop Generator: OpenLoop
+     - NLO_QCD_Mode: ```MC@NLO```
+     - Matrix Element Generator: ```Amegic```
+     - Real Subtracted NLO Generator: ```Comix```
+     - Loop Generator: ```OpenLoop```
+     - MI Generator  : ```Amisic```
 
    - Processes:
    
    | Processes | Accuracy | Runcard | Madgraph Validation | Data Validation |  
    | --- | --- | --- | --- | --- |
-   | Z(ee)      | ```LO: NJET:=0, LJET:=0; NLO: NJET:=0, LJET:=2``` | [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV) [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV) | | |
-   | Z(ee)+jets | LO: NJET:=2, LJET:=0. | [ZtoEE_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_LO_OpenLoops_13TeV) | | |
+   | Z(ee)      | LO | [ZtoEE_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV) | | |
+   | Z(ee)+jets | LO/NLO | [ZtoEE_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_ZtoEE_2j_LO_OpenLoops_13TeV) | | |
+   | Z(mm)+jets | NLO |  [ZtoMM_2j_NLO_OpenLoops_CKKW_13TeV]() | | |
    | W          | LO: NJET:=0, LJET:=0. | [W_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_0j_LO_OpenLoops_13TeV)  | | |
    | W+jets     | LO: NJET:=2, LJET:=0. | [W_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Inclusives/Run.dat_W_2j_LO_OpenLoops_13TeV)  | | |  
-   | W(mn)      | LO: NJET:=0, LJET:=0. | [WtoMN_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMN_0j_LO_OpenLoops_13TeV)  | | |
-   | W(mn)+jets | LO: NJET:=2, LJET:=0. | [WtoMN_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMN_2j_LO_OpenLoops_13TeV)  | | |
+   | W(mn)      | LO: NJET:=0, LJET:=0. | [WtoMNu_0j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_0j_LO_OpenLoops_13TeV)  | | |
+   | W(mn)+jets | LO: NJET:=2, LJET:=0. | [WtoMNu_2j_LO_OpenLoops_13TeV](https://github.com/SiewYan/SherpaGeneration/blob/master/Generator/data/Exclusives/Run.dat_WtoMNu_2j_LO_OpenLoops_13TeV)  | | |
    | QCD        | LO | | | |
    | Gamma+jets | LO | | | |
    | DY+jets    | LO | | | |
