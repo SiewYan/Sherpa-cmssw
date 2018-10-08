@@ -52,3 +52,4 @@
    - Sherpa 2.2.5 Reference: https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.5.html#Introduction-to-Sherpa
    - Sherpa 2.2.5 Overview : https://www.physik.uzh.ch/~marek/talks/20180621_CERN_b.pdf
    - Sherpa proceses: https://indico.cern.ch/event/746827/contributions/3112180/attachments/1705240/2747419/Sherpa_27_8_18_Gurpreet.pdf
+   - Sherpa Tutorial: https://twiki.cern.ch/twiki/bin/view/CMS/SherpaTutorialExercise1
