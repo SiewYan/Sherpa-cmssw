@@ -2,7 +2,7 @@
 
 ## Setup
 
-   Setup CMSSW environment, using Sherpa v2.2.4 (```scram tool info Sherpa```); OpenLoops v1.3.1; BlackHat v0.9.9
+   Setup CMSSW environment, using Sherpa v2.2.4; OpenLoops v1.3.1; BlackHat v0.9.9
 
    ```
    scram project CMSSW_9_4_8
@@ -17,7 +17,13 @@
    git cms-addpkg -q GeneratorInterface/SherpaInterface
    ```
 
-   checkout the clone
+   checkout the RivetInterface:
+
+   ```
+   git-cms-addpkg GeneratorInterface/RivetInterface
+   ```
+
+   Clone the repository SherpaGeneration:
 
    ```
    git clone https://github.com/SiewYan/SherpaGeneration.git
