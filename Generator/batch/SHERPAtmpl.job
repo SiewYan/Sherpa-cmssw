@@ -60,8 +60,8 @@ scram b -j6
 
 #Generate Sherpack
 cd SherpaGeneration/Generator/test
-#scp ../data/${RUN_CARD} .
-scp ./${RUN_CARD} .
+scp ../data/Inclusives/${RUN_CARD} .
+#scp ./${RUN_CARD} .
 ls
 echo "Running run_MakeSherpaLibs.sh INPUT1"
 sh run_MakeSherpaLibs.sh INPUT1 &> Log_step1
@@ -88,25 +88,27 @@ scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
 #assgin sherpack to current dir;
 #HERE=`pwd -p`
 #sed -e "s,XXX,${HERE}/," sherpa_INPUT1_MASTER_cff.py
-scp sherpa_INPUT1_MASTER_cff.py ../python
-cd ..
-scram b 
-cd test
-echo "Running cmsDriver"
-cmsDriver.py SherpaGeneration/Generator/python/sherpa_INPUT1_MASTER_cff.py -s GEN -n ${nevent} --no_exec --conditions auto:mc --eventcontent RAWSIM 
-echo "Generating Events"
-cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py
-echo "DONE --> Output look like this"
-ls
-scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
-echo "====== Sherpack is located at ====="
-echo "${SherpackLocation}/SHERPA_INPUT1"
+################
+#scp sherpa_INPUT1_MASTER_cff.py ../python
+#cd ..
+#scram b 
+#cd test
+#echo "Running cmsDriver"
+#cmsDriver.py SherpaGeneration/Generator/python/sherpa_INPUT1_MASTER_cff.py -s GEN -n ${nevent} --no_exec --conditions auto:mc --eventcontent RAWSIM &> Log_step3
+#echo "Generating Events"
+#cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py &> Log_step4
+#echo "DONE --> Output look like this"
+#ls
+#scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
+#scp Log_step3 Log_step4 ${SherpackLocation}/SHERPA_INPUT1
 
 #
 #----------------------------------------------------------
 # Clear job and log
 #----------------------------------------------------------
 #
+echo "====== Sherpack is located at ====="
+echo "${SherpackLocation}/SHERPA_INPUT1"
 rm -rf ${CODE_SRC}/Log_*
 rm -rf ${CODE_SRC}/LSF*
 rm -rf ${CODE_SRC}/core*
