@@ -19,12 +19,12 @@ echo "Job has been submitted from : " $LS_SUBCWD
 #
 echo "Step 1 : Setting the environment"
 #export SCRAM_ARCH=slc6_amd64_gcc493
-export SCRAM_ARCH=slc6_amd64_gcc630
+export SCRAM_ARCH=slc6_amd64_gcc700
 export CMSSW_SRC=INPUT01/src ##terminate at package SherpaGeneration
 export CODE_SRC=INPUT02 ##CURRENT
 export RUN_CARD=Run.dat_INPUT1
 export SherpackLocation=/eos/user/${USER:0:1}/$USER
-export CMSSWRELEASE=CMSSW_9_4_8
+export CMSSWRELEASE=CMSSW_10_3_0_pre5
 export nevent=XX_NEVENT_XX
 #rm -rf ${CODE_SRC}/CMSSW_INPUT1_mphi_INPUT3_mchi_INPUT2_mhs_INPUT4.job
 
@@ -60,7 +60,8 @@ scram b -j6
 
 #Generate Sherpack
 cd SherpaGeneration/Generator/test
-scp ../data/${RUN_CARD} .
+#scp ../data/${RUN_CARD} .
+scp ./${RUN_CARD} .
 ls
 echo "Running run_MakeSherpaLibs.sh INPUT1"
 sh run_MakeSherpaLibs.sh INPUT1 &> Log_step1
