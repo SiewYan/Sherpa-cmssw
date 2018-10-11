@@ -5,7 +5,7 @@
    Setup CMSSW environment
 
    ```
-   CMSSW_9_4_8: sherpa 2.2.4; openloops 1.3.1; 0.9.9-omkpbe4 0.9.9
+   CMSSW_9_4_8: sherpa 2.2.4; openloops 1.3.1; blackhat 0.9.9-omkpbe4 0.9.9
    ```
    ``` 
    CMSSW_10_3_0_pre5: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-omkpbe4
