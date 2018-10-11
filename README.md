@@ -30,6 +30,12 @@
    git-cms-addpkg GeneratorInterface/RivetInterface
    ```
 
+   Copy the interface scripts to working directory ```test```
+
+   ```
+   cp $TOPDIR/GeneratorInterface/SherpaInterface/data/*SherpaLibs.sh $TOPDIR/SherpaGeneration/Generator/test/
+   ```
+
    Clone the repository SherpaGeneration:
 
    ```
