@@ -35,7 +35,7 @@
    Clone the repository SherpaGeneration:
 
    ```
-   git clone https://github.com/SiewYan/SherpaGeneration.git
+   git clone https://github.com/SiewYan/SherpaGeneration.git -b sherpav2.2.5
    scram b -j8
    ```
    
