@@ -18,13 +18,12 @@ echo "Job has been submitted from : " $LS_SUBCWD
 #----------------------------------------------------------
 #
 echo "Step 1 : Setting the environment"
-#export SCRAM_ARCH=slc6_amd64_gcc493
-export SCRAM_ARCH=slc6_amd64_gcc700
+export SCRAM_ARCH=slc6_amd64_gcc630
 export CMSSW_SRC=INPUT01/src ##terminate at package SherpaGeneration
 export CODE_SRC=INPUT02 ##CURRENT
 export RUN_CARD=Run.dat_INPUT1
 export SherpackLocation=/eos/user/${USER:0:1}/$USER
-export CMSSWRELEASE=CMSSW_10_3_0_pre5
+export CMSSWRELEASE=CMSSW_9_3_13
 export nevent=XX_NEVENT_XX
 #rm -rf ${CODE_SRC}/CMSSW_INPUT1_mphi_INPUT3_mchi_INPUT2_mhs_INPUT4.job
 
@@ -60,7 +59,7 @@ scram b -j6
 
 #Generate Sherpack
 cd SherpaGeneration/Generator/test
-scp ../data/Inclusives/${RUN_CARD} .
+#scp ../data/Inclusives/${RUN_CARD} .
 #scp ./${RUN_CARD} .
 ls
 echo "Running run_MakeSherpaLibs.sh INPUT1"
@@ -86,21 +85,21 @@ scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
 
 #UNLESS you wanna generate some event file here
 #assgin sherpack to current dir;
-#HERE=`pwd -p`
-#sed -e "s,XXX,${HERE}/," sherpa_INPUT1_MASTER_cff.py
+HERE=`pwd -p`
+sed -e "s,XXX,${HERE}/," sherpa_INPUT1_MASTER_cff.py
 ################
-#scp sherpa_INPUT1_MASTER_cff.py ../python
-#cd ..
-#scram b 
-#cd test
-#echo "Running cmsDriver"
-#cmsDriver.py SherpaGeneration/Generator/python/sherpa_INPUT1_MASTER_cff.py -s GEN -n ${nevent} --no_exec --conditions auto:mc --eventcontent RAWSIM &> Log_step3
-#echo "Generating Events"
-#cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py &> Log_step4
-#echo "DONE --> Output look like this"
-#ls
-#scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
-#scp Log_step3 Log_step4 ${SherpackLocation}/SHERPA_INPUT1
+scp sherpa_INPUT1_MASTER_cff.py ../python
+cd ..
+scram b 
+cd test
+echo "Running cmsDriver"
+cmsDriver.py SherpaGeneration/Generator/python/sherpa_INPUT1_MASTER_cff.py -s GEN -n ${nevent} --no_exec --conditions auto:mc --eventcontent RAWSIM &> Log_step3
+echo "Generating Events"
+cmsRun sherpa_INPUT1_MASTER_cff_py_GEN.py &> Log_step4
+echo "DONE --> Output look like this"
+ls
+scp sherpa_INPUT1_MASTER_cff_py_GEN.root ${SherpackLocation}/SHERPA_INPUT1
+scp Log_step3 Log_step4 ${SherpackLocation}/SHERPA_INPUT1
 
 #
 #----------------------------------------------------------

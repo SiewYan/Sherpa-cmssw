@@ -1,6 +1,10 @@
 #!/bin/sh
 
-weightsFrag=`echo $2 | awk -F "_" '{print $1}'`
+if [ "$2" == "no" ];then
+    weightsFrag="no"
+else
+    weightsFrag=`echo $2 | awk -F "_" '{print $1}'`
+fi
 
 cp -rf SHERPAtmpl.job sherpa_$1_${weightsFrag}.job
 rm -rf temp
@@ -17,8 +21,14 @@ mv temp sherpa_$1_${weightsFrag}.job
 sed s/INPUT1/$1/g sherpa_$1_${weightsFrag}.job > temp
 mv temp sherpa_$1_${weightsFrag}.job
 #$2
-sed s/INPUT2/$2/g sherpa_$1_${weightsFrag}.job > temp
-mv temp sherpa_$1_${weightsFrag}.job
+if [ "$2" == "no" ];then
+    sed s/INPUT2/""/g sherpa_$1_${weightsFrag}.job > temp
+    mv temp sherpa_$1_${weightsFrag}.job
+else
+    sed s/INPUT2/$2/g sherpa_$1_${weightsFrag}.job > temp
+    mv temp sherpa_$1_${weightsFrag}.job
+fi
+
 #$3
 sed s/XX_NEVENT_XX/$3/g sherpa_$1_${weightsFrag}.job > temp
 mv temp sherpa_$1_${weightsFrag}.job
