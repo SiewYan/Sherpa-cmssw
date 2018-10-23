@@ -4,7 +4,7 @@
 
    Setup CMSSW environment
    ``` 
-   CMSSW_10_3_0_pre5: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-mlhled2
+   CMSSW_9_3_13: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-mlhled2
    ```
 
    ```
