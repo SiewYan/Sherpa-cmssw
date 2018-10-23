@@ -9,7 +9,7 @@
 
    ```
    scram project CMSSW_9_3_13
-   cd CMSSW_9_3_13_pre5/src
+   cd CMSSW_9_3_13/src
    cmsenv	 
    export TOPDIR=$PWD
    ```
