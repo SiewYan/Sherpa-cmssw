@@ -4,12 +4,12 @@
 
    Setup CMSSW environment
    ``` 
-   CMSSW_10_3_0_pre5: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-omkpbe4
+   CMSSW_10_3_0_pre5: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-mlhled2
    ```
 
    ```
-   scram project CMSSW_10_3_0_pre5
-   cd CMSSW_10_3_0_pre5/src
+   scram project CMSSW_9_3_13
+   cd CMSSW_9_3_13_pre5/src
    cmsenv	 
    export TOPDIR=$PWD
    ```

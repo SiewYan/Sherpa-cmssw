@@ -7,7 +7,7 @@
 #./makeJob.sh WtoLNu_2j_NLO_BlackHat_CKKW_13TeV ExtendedSherpaWeights_cfi.py 1000 1nd
 #./makeJob.sh WtoLNu_2j_NLO_OpenLoops_CKKW_13TeV ExtendedSherpaWeights_cfi.py 1000 1nd
 
-./makeJob.sh Run.dat_WtoMNu_2j_LO_BlackHat_13TeV no 1000 1nw
-./makeJob.sh Run.dat_WtoMNu_2j_LO_OpenLoops_13TeV no 1000 1nw
-./makeJob.sh Run.dat_WtoMNu_2j_NLO_BlackHat_CKKW_13TeV no 1000 1nw
-./makeJob.sh Run.dat_WtoMNu_2j_NLO_OpenLoops_CKKW_13TeV no 1000 1nw
+./makeJob.sh WtoMNu_2j_LO_BlackHat_13TeV no 1000 1nw
+./makeJob.sh WtoMNu_2j_LO_OpenLoops_13TeV no 1000 1nw
+./makeJob.sh WtoMNu_2j_NLO_BlackHat_CKKW_13TeV no 1000 1nw
+./makeJob.sh WtoMNu_2j_NLO_OpenLoops_CKKW_13TeV no 1000 1nw
