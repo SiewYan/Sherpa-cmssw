@@ -55,11 +55,12 @@ eval `scramv1 runtime -sh`
 git cms-addpkg -q GeneratorInterface/SherpaInterface
 #copy nessecary files
 cp -r ${CMSSW_SRC}/SherpaGeneration .
+echo "echo ${CMSSW_SRC}"
 scram b -j6
 
 #Generate Sherpack
-cd SherpaGeneration/Generator/test
-scp ../data/Inclusives/${RUN_CARD} .
+cd SherpaGeneration/Sherpacker/test
+#scp ../data/Inclusives/${RUN_CARD} .
 #scp ./${RUN_CARD} .
 ls
 echo "Running run_MakeSherpaLibs.sh INPUT1"
@@ -68,20 +69,20 @@ echo "Running run_PrepareSherpaLibs.sh INPUT1 INPUT2"
 sh run_PrepareSherpaLibs.sh INPUT1 INPUT2 &> Log_step2
 
 #copy all produced file to EOS
-if [ -e "${SherpackLocation}/SHERPA_INPUT1" ];then
-    rm ${SherpackLocation}/SHERPA_INPUT1
+if [ -e "${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}" ];then
+    rm ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
 fi
-mkdir -p ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_crdE.tgz ${SherpackLocation}/SHERPA_INPUT1   
-scp sherpa_INPUT1_libs.tgz  ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_MASTER.tgz ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_crss.tgz  ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_logL.tgz  ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_migr.tgz ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_13TeV_MASTER.md5 ${SherpackLocation}/SHERPA_INPUT1
-scp sherpa_INPUT1_MASTER_cff.py ${SherpackLocation}/SHERPA_INPUT1
-scp MPI_Cross_Sections.dat ${SherpackLocation}/SHERPA_INPUT1
-scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
+mkdir -p ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_crdE.tgz ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}   
+scp sherpa_INPUT1_libs.tgz  ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_MASTER.tgz ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_crss.tgz  ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_logL.tgz  ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_migr.tgz ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_13TeV_MASTER.md5 ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp sherpa_INPUT1_MASTER_cff.py ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp MPI_Cross_Sections.dat ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
+scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}
 
 #UNLESS you wanna generate some event file here
 #assgin sherpack to current dir;
@@ -107,7 +108,7 @@ scp Log_step1 Log_step2 ${SherpackLocation}/SHERPA_INPUT1
 #----------------------------------------------------------
 #
 echo "====== Sherpack is located at ====="
-echo "${SherpackLocation}/SHERPA_INPUT1"
+echo "${SherpackLocation}/SHERPA_INPUT1_${CMSSWRELEASE}"
 rm -rf ${CODE_SRC}/Log_*
 rm -rf ${CODE_SRC}/LSF*
 rm -rf ${CODE_SRC}/core*

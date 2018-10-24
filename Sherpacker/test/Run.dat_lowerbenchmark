@@ -1,0 +1,11 @@
+(run){
+BEAM_1 2212 6500; BEAM_2 2212 6500
+SCALES VAR{sqr(91.2)}
+}(run)
+(processes){
+Process 93 93 -> 11 -11
+End process
+}(processes)
+(selector){
+Mass 11 -11 66 116
+}(selector)

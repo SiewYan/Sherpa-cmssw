@@ -1,0 +1,151 @@
+Sender: LSF System <lsfadmin@b629ae65f4.cern.ch>
+Subject: Job 205025206: <sherpa_WtoMNu_LO_OpenLoops_13TeV_no.job> in cluster <batch> Done
+
+Job <sherpa_WtoMNu_LO_OpenLoops_13TeV_no.job> was submitted from host <lxplus002.cern.ch> by user <shoh> in cluster <batch>.
+Job was executed on host(s) <b629ae65f4.cern.ch>, in queue <1nd>, as user <shoh> in cluster <batch>.
+</afs/cern.ch/user/s/shoh> was used as the home directory.
+</afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_4_8/src/SherpaGeneration/Sherpacker/batch> was used as the working directory.
+Started at Wed Oct 24 18:54:56 2018
+Results reported on Wed Oct 24 20:21:27 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+sherpa_WtoMNu_LO_OpenLoops_13TeV_no.job
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   39434.92 sec.
+    Max Memory :                                 530.70 MB
+    Average Memory :                             453.06 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3469.30 MB
+    Max Swap :                                   4482 MB
+    Max Processes :                              24
+    Max Threads :                                49
+    Run time :                                   5189 sec.
+    Turnaround time :                            5191 sec.
+
+The output (if any) follows:
+
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/shoh/205025206> on <b629ae65f4.cern.ch>
+
+
+Job is running on Linux b629ae65f4.cern.ch 2.6.32-754.3.5.el6.x86_64 #1 SMP Wed Aug 15 08:57:36 CEST 2018 x86_64 x86_64 x86_64 GNU/Linux
+Job started on Wed Oct 24 18:55:16 CEST 2018
+
+Job has been submitted from :  /afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_4_8/src/SherpaGeneration/Sherpacker/batch
+Step 1 : Setting the environment
+- - - - - PATH SETTING- - - - -
+SCRAM_ARCH is :  slc6_amd64_gcc493
+Current Directory is :  /afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_4_8/src/SherpaGeneration/Sherpacker/batch
+WorkDir is :  /pool/lsf/shoh/205025206
+Run card is :  Run.dat_WtoMNu_LO_OpenLoops_13TeV
+Sherpack Location is :  /eos/user/s/shoh
+Disk space on this batch machine:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda3       9.7G  6.2G  3.0G  68% /
+tmpfs            23G     0   23G   0% /dev/shm
+/dev/vda6       4.7G   13M  4.5G   1% /tmp
+/dev/vda1        20G   44M   19G   1% /usr/vice/cache
+/dev/vda5       9.5G  4.9G  4.2G  54% /var
+sssd            300M  8.4M  292M   3% /var/lib/sss/db
+/dev/vdb        473G   90G  359G  21% /pool
+AFS             8.6G     0  8.6G   0% /afs
+cvmfs2           48G   47G  294M 100% /cvmfs/config-egi.egi.eu
+cvmfs2           48G   47G  294M 100% /cvmfs/cms.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/atlas.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/sft.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/lhcb.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/na61.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/fcc.cern.ch
+eosatlas        120T     0  120T   0% /eos/atlas
+cvmfs2           48G   47G  294M 100% /cvmfs/alice-ocdb.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/alice.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/ams.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/atlas-condb.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/atlas-nightlies.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/cms-ib.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/compass-condb.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/compass.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/geant4.cern.ch
+cvmfs2           48G   47G  294M 100% /cvmfs/ilc.desy.de
+cvmfs2           48G   47G  294M 100% /cvmfs/lhcb-condb.cern.ch
+Step 2 : Run
+Start Step-1: Generator
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+WARNING: Release CMSSW_9_4_8 is not available for architecture slc6_amd64_gcc493.
+         Developer's area is created for available architecture slc6_amd64_gcc630.
+scramv1 complete
+echo /afs/cern.ch/work/s/shoh/analysis/SherpaStudies/Sherpa-Generation/CMSSW_9_4_8/src
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+>> Building CMSSW version CMSSW_9_4_8 ----
+>> Subsystem BigProducts built
+>> Entering Package GeneratorInterface/SherpaInterface
+>> Creating project symlinks
+>> Entering Package SherpaGeneration/Sherpacker
+>> Leaving Package SherpaGeneration/Sherpacker
+>> Package SherpaGeneration/Sherpacker built
+>> Subsystem SherpaGeneration built
+Entering library rule at GeneratorInterface/SherpaInterface
+>> Compiling edm plugin /pool/lsf/shoh/205025206/CMSSW_9_4_8/src/GeneratorInterface/SherpaInterface/src/SherpackUtilities.cc 
+>> Compiling edm plugin /pool/lsf/shoh/205025206/CMSSW_9_4_8/src/GeneratorInterface/SherpaInterface/src/SherpaHadronizer.cc 
+>> Compiling edm plugin /pool/lsf/shoh/205025206/CMSSW_9_4_8/src/GeneratorInterface/SherpaInterface/src/SherpackFetcher.cc 
+>> Building edm plugin tmp/slc6_amd64_gcc630/src/GeneratorInterface/SherpaInterface/src/GeneratorInterfaceSherpaInterface/libGeneratorInterfaceSherpaInterface.so
+Leaving library rule at GeneratorInterface/SherpaInterface
+@@@@ Running edmWriteConfigs for GeneratorInterfaceSherpaInterface
+--- Registered EDM Plugin: GeneratorInterfaceSherpaInterface
+>> Leaving Package GeneratorInterface/SherpaInterface
+>> Package GeneratorInterface/SherpaInterface built
+>> Subsystem GeneratorInterface built
+gmake[1]: Entering directory '/pool/lsf/shoh/205025206/CMSSW_9_4_8'
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+@@@@ Refreshing Plugins:edmPluginRefresh
+>> Creating project symlinks
+>> Done generating edm plugin poisoned information
+>> Done python_symlink
+>> Compiling python modules python
+>> Compiling python modules cfipython/slc6_amd64_gcc630
+>> Compiling python modules src/SherpaGeneration/Sherpacker/python
+>> Compiling python modules src/GeneratorInterface/SherpaInterface/python
+>> Plugins of all types refreshed.
+>> All python modules compiled
+gmake[1]: Leaving directory '/pool/lsf/shoh/205025206/CMSSW_9_4_8'
+MakeSherpaLibs.sh
+PrepareSherpaLibs.sh
+Run.dat_Wbenchmark
+Run.dat_WtoMNu_2j_LO_BlackHat_CKKW_13TeV
+Run.dat_WtoMNu_2j_LO_OpenLoops_CKKW_13TeV
+Run.dat_WtoMNu_2j_NLO_BlackHat_CKKW_13TeV
+Run.dat_WtoMNu_2j_NLO_OpenLoops_CKKW_13TeV
+Run.dat_WtoMNu_LO_BlackHat_13TeV
+Run.dat_WtoMNu_LO_OpenLoops_13TeV
+Run.dat_WtoMNu_NLO_BlackHat_13TeV
+Run.dat_WtoMNu_NLO_OpenLoops_13TeV
+Run.dat_lowerbenchmark
+produce_DQM.sh
+rivetValidation.sh
+run_MakeSherpaLibs.sh
+run_PrepareSherpaLibs.sh
+Running run_MakeSherpaLibs.sh WtoMNu_LO_OpenLoops_13TeV
+Running run_PrepareSherpaLibs.sh WtoMNu_LO_OpenLoops_13TeV 
+cp: cannot stat `sherpa_WtoMNu_LO_OpenLoops_13TeV_13TeV_MASTER.md5': No such file or directory
+cp: cannot stat `MPI_Cross_Sections.dat': No such file or directory
+====== Sherpack is located at =====
+/eos/user/s/shoh/SHERPA_WtoMNu_LO_OpenLoops_13TeV_CMSSW_9_4_8
+
+Job end Wed Oct 24 20:20:40 CEST 2018
+
+
+Job finished at Wed Oct 24 20:20:40 CEST 2018 on node 
+ under linux version Scientific Linux CERN SLC release 6.10 (Carbon)
+
+CERN statistics: This process used approximately : 16:19:50 KSI2K hours (58790 KSI2K seconds)
+                 This process corresponds to     : 63:41:22 HS06  hours (229282 HS06  seconds)
