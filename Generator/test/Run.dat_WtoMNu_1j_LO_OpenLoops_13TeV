@@ -8,7 +8,7 @@
 
   % tags for process setup
   % YOUR INPUT IS NEEDED HERE
-  NJET:=1; LJET=0; QCUT:=0.;
+  NJET:=1; LJET=0; QCUT:=20.;
 
   % me generator settings
   ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;
