@@ -1,0 +1,39 @@
+from os import environ
+
+vars = Variables(None, ARGUMENTS)
+vars.Add('modelflags',
+         'Compiler flags for model source code', 
+         '-g -O0 -fno-var-tracking --std=c++11')
+vars.Add('lorentzflags',
+         'Compiler flags for lorentz source code', 
+         '-g -O2 -ffast-math --std=c++11')
+vars.Add('includedir',
+         'Location of SHERPA headers',
+         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/include/SHERPA-MC')
+vars.Add('libpath',
+         'Location of SHERPA libraries',
+         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
+vars.Add('installdir',
+         'Installation directory for the generated library',
+         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
+
+env = Environment(variables=vars,
+                  LINKFLAGS=['-Wl,-no-as-needed'],
+                  CPPPATH=['${includedir}'],
+                  LIBPATH=['${libdir}'],
+                  RPATH  =['${libdir}'])
+
+vars.Update(env)
+Help(vars.GenerateHelpText(env))
+
+env['ENV']=environ
+if env['PLATFORM']=='darwin':
+   env.Append( LINKFLAGS='-Wl,-undefined -Wl,dynamic_lookup' )
+
+lorentz_sources = [ s for s in  env.Glob('*.C') if s.name!='Model.C']
+
+modellib = env.SharedLibrary('SherpaHAHM_variableMW_UFO',[env.SharedObject('Model.C', CXXFLAGS='$modelflags'), 
+                                           env.SharedObject(lorentz_sources,CXXFLAGS='$lorentzflags')])
+
+env.Install('${installdir}',modellib)
+env.Alias('install',['${installdir}'])
