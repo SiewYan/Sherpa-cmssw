@@ -11,6 +11,7 @@
     --enable-blackhat=`scram tool info blackhat | grep 'BASE' | awk -F "=" '{print $2}'` \
     --enable-fastjet=`scram tool info fastjet | grep 'BASE' | awk -F "=" '{print $2}'` \
     --enable-openloops=`scram tool info openloops | grep 'BASE' | awk -F "=" '{print $2}'` \
+    --with-sqlite3=install
 
 #--enable-mpi \
 #--enable-pyext \
