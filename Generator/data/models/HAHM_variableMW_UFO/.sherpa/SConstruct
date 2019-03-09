@@ -9,13 +9,13 @@ vars.Add('lorentzflags',
          '-g -O2 -ffast-math --std=c++11')
 vars.Add('includedir',
          'Location of SHERPA headers',
-         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/include/SHERPA-MC')
+         '/lustre/cmswork/hoh/GenStudy/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/include/SHERPA-MC')
 vars.Add('libpath',
          'Location of SHERPA libraries',
-         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
+         '/lustre/cmswork/hoh/GenStudy/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
 vars.Add('installdir',
          'Installation directory for the generated library',
-         '/afs/cern.ch/work/s/shoh/analysis/SherpaStudies/darkPhoton/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
+         '/lustre/cmswork/hoh/GenStudy/CMSSW_9_3_13/src/SherpaGeneration/Generator/sherpant/lib/SHERPA-MC')
 
 env = Environment(variables=vars,
                   LINKFLAGS=['-Wl,-no-as-needed'],
