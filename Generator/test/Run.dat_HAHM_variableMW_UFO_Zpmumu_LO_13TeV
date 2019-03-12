@@ -10,20 +10,28 @@
   MODEL HAHM_variableMW_UFO;
 
   # uncomment to disable underlying event simulation:
-  # MI_HANDLER None;
+  MI_HANDLER Amisic; #Amisic
 
   # uncomment to disable hadronization:
-  # FRAGMENTATION Off;
+  FRAGMENTATION Ahadic;
 
   # uncomment to disable shower:
-  # SHOWER_GENERATOR None;
+  SHOWER_GENERATOR CSS; #Dire, CSS
 
   # LHC beam setup:
   BEAM_1 2212; BEAM_ENERGY_1 6500;
   BEAM_2 2212; BEAM_ENERGY_2 6500;
 
+  # LHAPDF
+  PDF_LIBRARY = LHAPDFSherpa;
+  PDF_SET = NNPDF31_nnlo_hessian_pdfas; #306000
+  #HEPMC_USE_NAMED_WEIGHTS=1;
+  # https://github.com/cms-sw/genproductions/blob/mg26x/MetaData/pdflist_4f_2017.dat
+  #SCALE_VARIATIONS 1.,1. 1.,2. 1.,0.5 2.,1. 2.,2. 2.,0.5 0.5,1. 0.5,2. 0.5,0.5
+  #PDF_VARIATIONS NNPDF31_nnlo_as_0118_nf_4[all]
+
   #import param card:
-  UFO_PARAM_CARD ../data/darkPhoton/param_card.dat;
+  #UFO_PARAM_CARD ../data/darkPhoton/param_card.dat;
 }(run)
 
 (processes){
@@ -31,6 +39,10 @@
   Decay 1023 -> 13 -13;
   Order (*,2,*,*); 
   # Syntax: "Order (QCD,QED,HIG,HIW);"
+  #NLO_QCD_Mode MC@NLO;
+  ME_Generator Comix;
+  RS_ME_Generator Comix;
+  #Loop_Generator OpenLoops;
   End process;
 }(processes)
 
@@ -58,10 +70,10 @@ block mass
 	5    4.7         # MB
 
 block hidden
-	1    20          # mZDinput
-	2    200         # MHSinput
-	3    0.01        # epsilon
-	4    1e-09       # kap
+	1    40          # mZDinput
+	2    100000      # MHSinput
+	3    0.02        # epsilon
+	4    1e-10       # kap
 	5    127.9       # aXM1
 
 block sminputs
