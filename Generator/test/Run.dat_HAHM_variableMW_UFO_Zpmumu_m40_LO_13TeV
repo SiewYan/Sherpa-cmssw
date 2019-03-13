@@ -1,0 +1,97 @@
+(run){
+  # general settings
+  EVENTS 100;
+
+  # me generator setup
+  ME_SIGNAL_GENERATOR Comix;
+  SCALES VAR{Abs2(p[0]+p[1])};
+  
+  # model setup
+  MODEL HAHM_variableMW_UFO;
+
+  # uncomment to disable underlying event simulation:
+  MI_HANDLER Amisic; #Amisic
+
+  # uncomment to disable hadronization:
+  FRAGMENTATION Ahadic;
+
+  # uncomment to disable shower:
+  SHOWER_GENERATOR CSS; #Dire, CSS
+
+  # LHC beam setup:
+  BEAM_1 2212; BEAM_ENERGY_1 6500;
+  BEAM_2 2212; BEAM_ENERGY_2 6500;
+
+  # LHAPDF
+  PDF_LIBRARY = LHAPDFSherpa;
+  PDF_SET = NNPDF31_nnlo_hessian_pdfas; #306000
+  #HEPMC_USE_NAMED_WEIGHTS=1;
+  # https://github.com/cms-sw/genproductions/blob/mg26x/MetaData/pdflist_4f_2017.dat
+  #SCALE_VARIATIONS 1.,1. 1.,2. 1.,0.5 2.,1. 2.,2. 2.,0.5 0.5,1. 0.5,2. 0.5,0.5
+  #PDF_VARIATIONS NNPDF31_nnlo_as_0118_nf_4[all]
+
+  #import param card:
+  #UFO_PARAM_CARD ../data/darkPhoton/param_card_m40.dat;
+
+}(run)
+
+(processes){
+  Process 93 93 -> 1023;
+  Decay 1023 -> 13 -13;
+  Order (*,*,*,*); 
+  # Syntax: "Order (QCD,QED,HIG,HIW);"
+  #NLO_QCD_Mode MC@NLO;
+  ME_Generator Comix;
+  RS_ME_Generator Comix;
+  #Loop_Generator OpenLoops;
+  End process;
+}(processes)
+
+(selector){
+  # phase space cuts for matrix elements
+}(selector)
+
+(ufo){
+block yukawa
+	4    1.42        # ymc
+	5    4.7         # ymb
+	6    174.3       # ymt
+	15   1.777       # ymtau
+
+block higgs
+	1    125         # MHinput
+
+block ckmblock
+	1    0.488       # cabi
+
+block mass
+	15   1.777       # MTA
+	4    1.42        # MC
+	6    174.3       # MT
+	5    4.7         # MB
+
+block hidden
+	1    40          # mZDinput
+	2    100000      # MHSinput
+	3    0.02        # epsilon
+	4    1e-10       # kap
+	5    127.9       # aXM1
+
+block sminputs
+	1    0.225       # swsq
+	2    127.9       # aEWM1
+	3    1.16639e-05 # Gf
+	4    0.118       # aS
+
+#block gaugemass
+	1    91.188      # mZinput
+
+decay 	6    1.50833649  # WT
+decay 	23   2.44140351  # WZ
+decay 	1023 3.108968e-04   # WZp
+decay 	24   2.04759951  # WW
+decay 	25   0.00282299  # WH
+decay 	35   6.110557e+08 # WHS
+
+}(ufo)
+
