@@ -29,7 +29,7 @@
    Clone the repository SherpaGeneration:
 
    ```
-   git clone https://github.com/SiewYan/SherpaGeneration.git -b sherpav2.2.5
+   git clone https://github.com/SiewYan/SherpaGeneration.git -b EXO-2.2.5
    cp $TOPDIR/GeneratorInterface/SherpaInterface/data/*SherpaLibs.sh $TOPDIR/SherpaGeneration/Generator/test/
    scram b -j8
    ```
