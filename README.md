@@ -1,6 +1,6 @@
 # Sherpa-Generation
 
-## Setup
+## Setup on lxplus
 
    Setup CMSSW environment
    ``` 
@@ -19,13 +19,7 @@
    ```
    git cms-addpkg -q GeneratorInterface/SherpaInterface
    ```
-
-   checkout the RivetInterface:
-
-   ```
-   git-cms-addpkg GeneratorInterface/RivetInterface
-   ```
-
+   
    Clone the repository SherpaGeneration:
 
    ```
@@ -39,43 +33,66 @@
    ```
    scram tool info Sherpa
    ```
+   
+## Build standalone Sherpa
 
-## Generate Sherpack on Z+jets
-
-   ### On head
-
+   To enable Sherpa-generate-model functionality, you need to build external sherpa with packages as close as possible to cmssw's Sherpa.
+   
    ```
-   cd SherpaGeneration/Generator/test
-   sh run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV
-   sh run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py
-   sh run_GenerateEvent.sh sherpa_ZtoEE_0j_OpenLoops_13TeV
-   ```
-
-   ### Using LSF Batch
-
-   ```
-   cd SherpaGeneration/Generator/batch
-   sh run.sh #running on ZtoEE_0j_OpenLoops_13TeV with weight ExtendedSherpaWeights_cfi.py
-   ```
-
-   By default, your job is submitted to 1 day queue, checking your LSF job status:
-
-   ```
-   bqueue
+   cd $TOPDIR/SherpaGeneration/Generator/
+   mkdir sherpant
+   ./fetchSherpa.sh
+   mv buildSherpant.sh SHERPA-MC-2.2.5
+   cd $TOPDIR/SherpaGeneration/Generator/SHERPA-MC-2.2.5
+   ./buildSherpant.sh
    ```
    
-   You will find a bunch of log file to check the health of the sherpack,sherpacks, and fragment file in EOS
-
+   Once the Makefile is produced, please edit Makefile (search for Manual) and remove it to avoid being built (buggy)
+   Later, do
+   
    ```
-   #ls /eos/user/U/USERNAME/SHERPA_ZtoEE_0j_OpenLoops_13TeV/
-   Log_step1                                               sherpa_ZtoEE_0j_OpenLoops_13TeV_crdE.tgz
-   Log_step2                                               sherpa_ZtoEE_0j_OpenLoops_13TeV_crss.tgz
-   MPI_Cross_Sections.dat                                  sherpa_ZtoEE_0j_OpenLoops_13TeV_libs.tgz
-   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER.tgz              sherpa_ZtoEE_0j_OpenLoops_13TeV_logL.tgz
-   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER_cff.py           sherpa_ZtoEE_0j_OpenLoops_13TeV_migr.tgz
-   sherpa_ZtoEE_0j_OpenLoops_13TeV_MASTER_cff_py_GEN.root   
+   make install -j4
    ```
 
-## Reference
+   to install (take some time). Once its done, source the path of Sherpa's bin
+   
+   ```
+   cd $TOPDIR/SherpaGeneration/Generator/
+   source sherpant.sh
+   ```
+   
+## Generate UFO Model's library
 
-   - https://twiki.cern.ch/twiki/bin/view/CMS/SherpaInterfaceStepByStep
+   There is a copy of the model in ```data/models```:
+   
+   ```
+   cd $TOPDIR/SherpaGeneration/Generator/data/models
+   Sherpa-generate-model HAHM_variableMW_UFO
+   ```
+   
+   At the end it will output a model runcard example, there is a modified runcard at ```test``` folder,
+   
+## Generate Sherpack
+   Run the following command to generate sherpack:
+   
+   ```
+   cd $TOPDIR/SherpaGeneration/Generator/test/
+   ./run_MakeSherpaLibs.sh HAHM_variableMW_UFO_Zpmumu_m40_LO_13TeV
+   ```
+   
+## Generate EDM event
+
+   After the sherpack made successfully, produce the python fragment by runnin command
+
+   ```
+   ./run_PrepareSherpaLibs.sh HAHM_variableMW_UFO_Zpmumu_m40_LO_13TeV
+   scp sherpa_HAHM_variableMW_UFO_Zpmumu_m40_LO_13TeV_MASTER_cff.py ../python
+   cd $TOPDIR/SherpaGeneration/Generator/
+   scram b 
+   cd $TOPDIR/SherpaGeneration/Generator/test
+   ./cmsCreate.sh sherpa_HAHM_variableMW_UFO_Zpmumu_m40_LO_13TeV_MASTER_cff.py
+   cmsRun sherpa_HAHM_variableMW_UFO_Zpmumu_m40_LO_13TeV_MASTER_cff_py_GEN.py
+   ```
+   
+   Note: running this step at lxplus will return error of fastjet packages is not permitted to be accessed (AFS phaseout).
+   Workaround will be running it in institutional server.
