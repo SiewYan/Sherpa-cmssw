@@ -59,6 +59,7 @@
    ```
    cd $TOPDIR/SherpaGeneration/Generator/
    source sherpant.sh
+   scram b -j4
    ```
    
 ## Generate UFO Model's library
