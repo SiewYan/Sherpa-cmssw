@@ -85,7 +85,7 @@ block sminputs
 	3    1.16639e-05 # Gf
 	4    0.118       # aS
 
-#block gaugemass
+block gaugemass
 	1    91.188      # mZinput
 
 decay 	6    1.50833649  # WT
