@@ -48,6 +48,8 @@
 
 (selector){
   # phase space cuts for matrix elements
+  PseudoRapidity 13 -0.25 0.25
+  PseudoRapidity -13 -0.25 0.25
 }(selector)
 
 (ufo){
