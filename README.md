@@ -59,6 +59,7 @@
    ```
    cd $TOPDIR/SherpaGeneration/Generator/
    source sherpant.sh
+   cd $TOPDIR
    scram b -j4
    ```
    
