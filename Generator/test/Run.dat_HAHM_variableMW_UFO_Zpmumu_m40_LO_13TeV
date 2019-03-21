@@ -49,8 +49,13 @@
 
 (selector){
   # phase space cuts for matrix elements
-  PseudoRapidity 13 -0.25 0.25
-  PseudoRapidity -13 -0.25 0.25
+  # Lepton
+  PseudoRapidity 13 -2.5 2.5
+  PseudoRapidity -13 -2.5 2.5
+  # Minimum and maximum DeltaR distance 
+  DeltaR 13 -13 0.1
+  DeltaR -13 13	0.1
+  
 }(selector)
 
 (ufo){
