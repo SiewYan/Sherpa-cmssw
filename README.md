@@ -4,12 +4,12 @@
 
    Setup CMSSW environment
    ``` 
-   CMSSW_9_3_13: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-mlhled2
+   CMSSW_9_3_15: sherpa 2.2.6; openloops 2.0.0; blackhat 0.9.9-mlhled2
    ```
 
    ```
-   scram project CMSSW_9_3_13
-   cd CMSSW_9_3_13/src
+   scram project CMSSW_9_3_15
+   cd CMSSW_9_3_15/src
    cmsenv	 
    export TOPDIR=$PWD
    ```
@@ -17,19 +17,13 @@
    checkout the SherpaInterface: 
 
    ```
-   git cms-addpkg -q GeneratorInterface/SherpaInterface
-   ```
-
-   checkout the RivetInterface:
-
-   ```
-   git-cms-addpkg GeneratorInterface/RivetInterface
+   git cms-addpkg  GeneratorInterface/SherpaInterface
    ```
 
    Clone the repository SherpaGeneration:
 
    ```
-   git clone https://github.com/SiewYan/SherpaGeneration.git -b sherpav2.2.5
+   git clone https://github.com/SiewYan/SherpaGeneration.git -b sherpav2.2.6
    cp $TOPDIR/GeneratorInterface/SherpaInterface/data/*SherpaLibs.sh $TOPDIR/SherpaGeneration/Generator/test/
    scram b -j8
    ```
@@ -40,7 +34,7 @@
    scram tool info Sherpa
    ```
 
-## Generate Sherpack on Z+jets
+## Generate Sherpack on Z+jets (OBSOLETE)
 
    ### On head
 
