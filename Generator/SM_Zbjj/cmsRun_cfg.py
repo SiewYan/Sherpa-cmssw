@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py --mc --step GEN,SIM --datatier GEN-SIM --eventcontent RAWSIM --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --era Run2_2017 --python_filename /lustre/cmswork/hoh/GenStudy/bfilter/CMSSW_9_3_15/src/SherpaGeneration/Generator/SM_Zbj_nlo/cmsRun_cfg.py -n 100 --customise Configuration/GenProduction/randomizeSeeds.randomizeSeeds --customise_commands process.RandomNumberGeneratorService.generator.initialSeed=1111111 --no_exec
+# with command line options: SherpaGeneration/Generator/python/sherpa_SM_Zbjj_MASTER_cff.py --mc --step GEN,SIM --datatier GEN-SIM --eventcontent RAWSIM --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --era Run2_2017 --python_filename /lustre/cmswork/hoh/GenStudy/bfilter/CMSSW_9_3_15/src/SherpaGeneration/Generator/SM_Zbjj/cmsRun_cfg.py -n 100 --customise Configuration/GenProduction/randomizeSeeds.randomizeSeeds --no_exec
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -41,7 +41,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py nevts:100'),
+    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbjj_MASTER_cff.py nevts:100'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
@@ -59,7 +59,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
         filterName = cms.untracked.string('')
     ),
     eventAutoFlushCompressedSize = cms.untracked.int32(20971520),
-    fileName = cms.untracked.string('sherpa_SM_Zbj_nlo_MASTER_cff_py_GEN_SIM.root'),
+    fileName = cms.untracked.string('sherpa_SM_Zbjj_MASTER_cff_py_GEN_SIM.root'),
     outputCommands = process.RAWSIMEventContent.outputCommands,
     splitLevel = cms.untracked.int32(0)
 )
@@ -77,7 +77,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
     SherpaDefaultWeight = cms.double(1.0),
     SherpaParameters = cms.PSet(
         MPI_Cross_Sections = cms.vstring(' MPIs in Sherpa, Model = Amisic:', 
-            ' semihard xsec = 80.6402 mb,', 
+            ' semihard xsec = 81.5347 mb,', 
             ' non-diffractive xsec = 17.0318 mb with nd factor = 0.3142.'),
         Run = cms.vstring(' (run){', 
             ' # general settings', 
@@ -95,7 +95,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
             ' # NJET = the maximal number of extra jets', 
             ' # LJET = the multiplicity of the MC@NLO subprocesses, exp: LJET = 2,3 means X+jj and X+jjj will be produced NLO', 
             ' # QCUT = the merging cut', 
-            ' NJET:=1; LJET:=1,2; QCUT:=30;', 
+            ' NJET:=2; LJET:=0; QCUT:=30;', 
             ' # uncomment to disable underlying event simulation:', 
             ' # MI_HANDLER None; #Or Amisic', 
             ' # uncomment to disable hadronization:', 
@@ -132,7 +132,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
             ' NLO_QCD_Mode MC@NLO {LJET};', 
             ' ME_Generator Amegic {LJET};', 
             ' RS_ME_Generator Comix {LJET};', 
-            ' Loop_Generator LOOPGEN {LJET};', 
+            ' #Loop_Generator LOOPGEN {LJET};', 
             ' Integration_Error 0.02 {4};', 
             ' Integration_Error 0.02 {5};', 
             ' Integration_Error 0.05 {6};', 
@@ -153,9 +153,9 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
     ),
     SherpaPath = cms.string('./'),
     SherpaPathPiece = cms.string('./'),
-    SherpaProcess = cms.string('SM_Zbj_nlo'),
+    SherpaProcess = cms.string('SM_Zbjj'),
     SherpaResultDir = cms.string('Result'),
-    SherpackChecksum = cms.string('5f3c1fc85c87c4ce8d9ebbea434d5730'),
+    SherpackChecksum = cms.string('70ff388c8357f8b3b1477402fe94f6ec'),
     SherpackLocation = cms.string('./'),
     crossSection = cms.untracked.double(-1),
     filterEfficiency = cms.untracked.double(1.0),
@@ -192,7 +192,6 @@ process = randomizeSeeds(process)
 
 # Customisation from command line
 
-#process.RandomNumberGeneratorService.generator.initialSeed=1111111
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)
