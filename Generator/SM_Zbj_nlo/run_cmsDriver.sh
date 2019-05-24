@@ -21,6 +21,7 @@ if [ -e $frag ];then
 	--era Run2_2017 \
 	--python_filename ${dir}/cmsRun_cfg.py \
 	-n ${Nevent} \
+	--customise Configuration/GenProduction/randomizeSeeds.randomizeSeeds \
 	--customise_commands process.RandomNumberGeneratorService.generator.initialSeed=1111111 \
 	--no_exec
 else

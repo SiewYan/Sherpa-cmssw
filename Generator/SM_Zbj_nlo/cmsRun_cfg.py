@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py --mc --step GEN,SIM --datatier GEN-SIM --eventcontent RAWSIM --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --era Run2_2017 --python_filename /lustre/cmswork/hoh/GenStudy/bfilter/CMSSW_9_3_15/src/SherpaGeneration/Generator/SM_Zbj_nlo/cmsRun_cfg.py --customise_commands process.RandomNumberGeneratorService.generator.initialSeed= -n 100 --customise_commands process.RandomNumberGeneratorService.generator.initialSeed=1111111 --no_exec
+# with command line options: SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py --mc --step GEN,SIM --datatier GEN-SIM --eventcontent RAWSIM --conditions 93X_mc2017_realistic_v3 --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --era Run2_2017 --python_filename /lustre/cmswork/hoh/GenStudy/bfilter/CMSSW_9_3_15/src/SherpaGeneration/Generator/SM_Zbj_nlo/cmsRun_cfg.py -n 100 --customise Configuration/GenProduction/randomizeSeeds.randomizeSeeds --customise_commands process.RandomNumberGeneratorService.generator.initialSeed=1111111 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -26,7 +26,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100)
+    input = cms.untracked.int32(10)
 )
 
 # Input source
@@ -38,7 +38,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py nevts:100'),
+    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py nevts:10'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
@@ -78,7 +78,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
             ' non-diffractive xsec = 17.0318 mb with nd factor = 0.3142.'),
         Run = cms.vstring(' (run){', 
             ' # general settings', 
-            ' EVENTS 100;', 
+            ' EVENTS 10;', 
             ' # me generator setup', 
             ' # Amegic', 
             ' ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;', 
@@ -177,10 +177,19 @@ associatePatAlgosToolsTask(process)
 for path in process.paths:
 	getattr(process,path)._seq = process.ProductionFilterSequence * getattr(process,path)._seq 
 
+# customisation of the process.
+
+# Automatic addition of the customisation function from Configuration.GenProduction.randomizeSeeds
+from Configuration.GenProduction.randomizeSeeds import randomizeSeeds 
+
+#call to customisation function randomizeSeeds imported from Configuration.GenProduction.randomizeSeeds
+process = randomizeSeeds(process)
+
+# End of customisation functions
 
 # Customisation from command line
 
-process.RandomNumberGeneratorService.generator.initialSeed=1111111
+#process.RandomNumberGeneratorService.generator.initialSeed=1111111
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)

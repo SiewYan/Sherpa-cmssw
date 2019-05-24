@@ -5,7 +5,6 @@
   # me generator setup
   # Amegic
   ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;
-  ME_SIGNAL_GENERATOR  Comix LOOPGEN;
   EVENT_GENERATION_MODE PartiallyUnweighted;
   LOOPGEN:=OpenLoops;
   SCALES VAR{Abs2(p[0]+p[1])};
@@ -17,7 +16,7 @@
   # NJET = the maximal number of extra jets
   # LJET = the multiplicity of the MC@NLO subprocesses, exp: LJET = 2,3 means X+jj and X+jjj will be produced NLO
   # QCUT = the merging cut
-  NJET:=1; LJET:=0,1; QCUT:=30;
+  NJET:=1; LJET:=1,2; QCUT:=30;
   
   # uncomment to disable underlying event simulation:
   # MI_HANDLER None; #Or Amisic
@@ -81,5 +80,7 @@
   FastjetFinder antikt 1 5 0 0.4 0.75 5 100 1; #FastjetFinder <algorithm> <n> <ptmin> <etmin> <dr> [<f(siscone)>=0.75] [<eta-max>] [<y-max>] [<nb>] [<nb2>]	
   #The transverse momentum of v in GeV.
   PT2 12 -12 200. E_CMS
+  PT2 14 -14 200. E_CMS
+  PT2 16 -16 200. E_CMS
 
 }(selector)
