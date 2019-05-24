@@ -1,0 +1,488 @@
+Welcome to Sherpa, Siew Yan Hoh. Initialization of framework underway.
+The local time is Fri May 24 15:45:59 2019.
+Run_Parameter::Init(): Seed mode '*'
+Run_Parameter::Init(): Setting memory limit to 39.1487 GB.
+Random::SetSeed(): Seed set to 1234
+My_MPI::SetUpSendRecv(): Running on 18 ranks.
+-----------------------------------------------------------------------------
+-----------    Event generation run with SHERPA started .......   -----------
+-----------------------------------------------------------------------------
+................................................ |       +                   
+................................................ ||  |       +  +            
+...................................        ....  | |         /   +           
+................. ................   _,_ |  ....  ||         +|  +  +        
+...............................  __.'  ,\|  ...  ||    /    +|          +    
+.............................. (  \    \   ...  | |  |   + + \         +   
+.............................  (    \   -/  .... ||       +    |          +  
+........ ...................  <S   /()))))~~~~~~~~##     +     /\    +       
+............................ (!H   (~~)))))~~~~~~#/     +  +    |  +         
+................ ........... (!E   (~~~)))))     /|/    +         +          
+............................ (!R   (~~~)))))   |||   + +            +        
+..... ...................... (!P    (~~~~)))   /|  + +          +            
+............................ (!A>    (~~~~~~~~~##        + +        +        
+............................. ~~(!    '~~~~~~~ \       +     + +      +      
+...............................  `~~~QQQQQDb //   |         + + +        +   
+........................ ..........   IDDDDP||     \  + + + + +             +
+....................................  IDDDI||       \                      + 
+.................................... IHD HD||         \ + +  + + + + +      +
+...................................  IHD ##|            :-) + +\          +  
+......... ............... ......... IHI ## /      /   +  + + + +\       +    
+................................... IHI/ /       /      + + + +        +     
+................................... ## | | /    / + +      + + /      +      
+....................... /TT\ .....  ##/ ///  / + + + + + + +/       +        
+......................./TTT/T\ ... /TT\/\\\ / + + + + + + +/   \         +   
+....................../TTT/TTTT\...|TT/T\\\/   +    ++  + /              
+-----------------------------------------------------------------------------
+
+     SHERPA version 2.2.6 (Cho Oyu)
+                                                                             
+     Authors:        Enrico Bothmann, Stefan Hoeche, Frank Krauss,           
+                     Silvan Kuttimalai, Marek Schoenherr, Holger Schulz,     
+                     Steffen Schumann, Frank Siegert, Korinna Zapp           
+     Former Authors: Timo Fischer, Tanju Gleisberg, Hendrik Hoeth,           
+                     Ralf Kuhn, Thomas Laubrich, Andreas Schaelicke,         
+                     Jan Winter                                              
+                                                                             
+     This program uses a lot of genuine and original research work           
+     by other people. Users are encouraged to refer to                       
+     the various original publications.                                      
+                                                                             
+     Users are kindly asked to refer to the documentation                    
+     published under JHEP 02(2009)007                                        
+                                                                             
+     Please visit also our homepage                                          
+                                                                             
+       http://sherpa.hepforge.org                                            
+                                                                             
+     for news, bugreports, updates and new releases.                         
+                                                                             
+-----------------------------------------------------------------------------
+
+WARNING: You are using an unsupported development branch.
+Git branch HEAD, revision 1668af7a7ed0a8f3ba06c8e44a3a7bfc4c8bd980.
+
+Beam_Spectra_Handler : 
+   type = Monochromatic*Monochromatic
+   for    P+  ((6500,0,0,6500))
+   and    P+  ((6500,0,0,-6500))
+PDF set 'NNPDF31_nnlo_hessian_pdfas' loaded for beam 1 (P+).
+PDF set 'NNPDF31_nnlo_hessian_pdfas' loaded for beam 2 (P+).
+Initialized the ISR: (SF)*(SF)
+One_Running_AlphaS::One_Running_AlphaS() {
+  Setting \alpha_s according to PDF
+  perturbative order 2
+  \alpha_s(M_Z) = 0.118
+}
+One_Running_AlphaS::One_Running_AlphaS() {
+  Setting \alpha_s according to PDF
+  perturbative order 2
+  \alpha_s(M_Z) = 0.118
+}
+ List of Particle Data 
+  IDName     kfc  MASS[<kfc>]   WIDTH[<kfc>]  STABLE[<kfc>] MASSIVE[<kfc>]  ACTIVE[<kfc>]  YUKAWA[<kfc>]
+       d       1         0.01              0              1              0              1              0
+       u       2        0.005              0              1              0              1              0
+       s       3          0.2              0              1              0              1              0
+       c       4         1.42              0              1              0              1              0
+       b       5          4.8              0              1              0              1              0
+       t       6       173.21              2              0              1              1         173.21
+      e-      11     0.000511              0              1              0              1              0
+      ve      12            0              0              1              0              1              0
+     mu-      13        0.105              0              1              0              1              0
+     vmu      14            0              0              1              0              1              0
+    tau-      15        1.777    2.26735e-12              0              0              1              0
+    vtau      16            0              0              1              0              1              0
+       G      21            0              0              1              0              1              0
+       P      22            0              0              1              0              1              0
+       Z      23      91.1876         2.4952              0              1              1        91.1876
+      W+      24       80.385          2.085              0              1              1         80.385
+      h0      25          125        0.00407              0              1              1            125
+
+ List of Particle Containers 
+    IDName     kfc     Constituents
+         l      90     {e-,e+,mu-,mu+,tau-,tau+}
+         v      91     {ve,veb,vmu,vmub,vtau,vtaub}
+         j      93     {d,db,u,ub,s,sb,c,cb,b,bb,G}
+         Q      94     {d,db,u,ub,s,sb,c,cb,b,bb}
+         r      99     {d,db,u,ub,s,sb,c,cb,b,bb,G}
+    bottom     900     {b,bb}
+lightflavs     901     {d,db,u,ub,s,sb,c,cb,G,b,bb}
+
+CS_Shower::CS_Shower(): Set respect Q2 mode 0
+CS_Shower::CS_Shower(): Set color setter mode 0
+CS_Shower::CS_Shower(): Set respect Q2 mode 0
+CS_Shower::CS_Shower(): Set color setter mode 0
+Initialized the Shower_Handler.
++-----------------------------------------+
+|   X   X   X XXXX  XXX  XXX  XXX         |
+|  X X  XX XX X    X      X  X     X   X  |
+| X   X X X X XXX  X XXX  X  X    XXX XXX |
+| XXXXX X   X X    X   X  X  X     X   X  |
+| X   X X   X XXXX  XXX  XXX  XXX         |
++-----------------------------------------+
+| please cite: JHEP 0202:044,2002         |
++-----------------------------------------+
+ME_Generators::ME_Generators(): Try loading 'OpenLoops' from 'libSherpaOpenLoops'.
+ME_Generator_Base::SetPSMasses(): Massive PS flavours for Comix: (c,cb,b,bb,e-,e+,mu-,mu+,tau-,tau+)
++----------------------------------+
+|                                  |
+|      [31mCCC[0m  [32mOOO[0m  [34mM[0m   [34mM[0m I [33mX[0m   [33mX[0m     |
+|     [31mC[0m    [32mO[0m   [32mO[0m [34mMM[0m [34mMM[0m I  [33mX[0m [33mX[0m      |
+|     [31mC[0m    [32mO[0m   [32mO[0m [34mM[0m [34mM[0m [34mM[0m I   [33mX[0m       |
+|     [31mC[0m    [32mO[0m   [32mO[0m [34mM[0m   [34mM[0m I  [33mX[0m [33mX[0m      |
+|      [31mCCC[0m  [32mOOO[0m  [34mM[0m   [34mM[0m I [33mX[0m   [33mX[0m     |
+|                                  |
++==================================+
+|  Color dressed  Matrix Elements  |
+|     http://comix.freacafe.de     |
+|   please cite  JHEP12(2008)039   |
++----------------------------------+
+ME_Generator_Base::SetPSMasses(): Massive PS flavours for Amegic: (c,cb,b,bb,e-,e+,mu-,mu+,tau-,tau+)
+Amegic::Initialize(): Set gauge 1.
+Initialising OpenLoops generator from /cvmfs/cms.cern.ch/slc6_amd64_gcc630/external/openloops/2.0.0
+####################################################################
+#        ___  ___  ____  _  _       __   __  ___   __    ___       #
+#       /   \ |__| |__   |\ |  |   /  \ /  \ |__| /__    __/       #
+#       \___/ |    |___  | \|  |__ \__/ \__/ |    __/   /__        #
+#       You are using OpenLoops 2 to evaluate loop amplitudes      #
+#        F. Buccioni, J.-N. Lang, J. Lindert, P. Maierhoefer,      #
+#               S. Pozzorini, M. Zoller, H. Zhang                  #
+#                Eur.Phys.J. C78 (2018) no.1, 70                   #
+####################################################################
+Matrix_Element_Handler::BuildProcesses(): Looking for processes .... done ( 24 MB, 0s / 0s ).
+Matrix_Element_Handler::InitializeProcesses(): Performing tests ....                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+ done ( 24 MB, 0s / 0s ).
+Initialized the Matrix_Element_Handler for the hard processes.
+Initialized the Beam_Remnant_Handler.
+Hard_Decay_Handler::SetDecayMasses(): Massive decay flavours: (c,cb,b,bb,e-,e+,mu-,mu+,tau-,tau+)
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.4              *        
+         *                                         *        
+         *******************************************        
+                                                            
+[34mHard_Decay_Handler::CustomizeDecayTables[0m:([32m"Ignoring unknown decay channel: 25,12,-12"[0m)
+[34mHard_Decay_Handler::CustomizeDecayTables[0m:([32m"Ignoring unknown decay channel: 25,14,-14"[0m)
+[34mHard_Decay_Handler::CustomizeDecayTables[0m:([32m"Ignoring unknown decay channel: 25,16,-16"[0m)
+
+Decay table for : W+.
+                 Total width: 2.09864 GeV
+               Flavour width: 2.085 GeV
+----------------------------------------
+24,2,-1           W+ --> u db              0.699878   GeV, BR= 33.3492 %
+24,4,-3           W+ --> c sb              0.699223   GeV, BR= 33.318 %
+24,12,-11         W+ --> ve e+             0.233293   GeV, BR= 11.1164 %
+24,14,-13         W+ --> vmu mu+           0.233292   GeV, BR= 11.1163 %
+24,16,-15         W+ --> vtau tau+         0.232951   GeV, BR= 11.1001 %
+----------------------------------------
+
+Decay table for : W-.
+Total width:                  2.09864 GeV
+Flavour width:                2.085 GeV
+----------------------------------------
+-24,-2,1          W- --> ub d              0.699878   GeV, BR= 33.3492 %
+-24,-4,3          W- --> cb s              0.699223   GeV, BR= 33.318 %
+-24,-12,11        W- --> veb e-            0.233293   GeV, BR= 11.1164 %
+-24,-14,13        W- --> vmub mu-          0.233292   GeV, BR= 11.1163 %
+-24,-16,15        W- --> vtaub tau-        0.232951   GeV, BR= 11.1001 %
+----------------------------------------
+
+Decay table for : Z.
+Total width:                  2.5019 GeV
+Active width:                 0.510848 GeV
+Flavour width:                2.4952 GeV
+----------------------------------------
+23,1,-1           Z --> d db               0.381572   GeV [disabled], BR= 15.2513 %
+23,2,-2           Z --> u ub               0.297431   GeV [disabled], BR= 11.8882 %
+23,3,-3           Z --> s sb               0.381572   GeV [disabled], BR= 15.2513 %
+23,4,-4           Z --> c cb               0.296998   GeV [disabled], BR= 11.8709 %
+23,5,-5           Z --> b bb               0.375246   GeV [disabled], BR= 14.9985 %
+23,11,-11         Z --> e- e+              0.0861414  GeV [disabled], BR= 3.44304 %
+23,12,-12         Z --> ve veb             0.170283   GeV, BR= 6.80614 %
+23,13,-13         Z --> mu- mu+            0.0861407  GeV [disabled], BR= 3.44302 %
+23,14,-14         Z --> vmu vmub           0.170283   GeV, BR= 6.80614 %
+23,15,-15         Z --> tau- tau+          0.0859452  GeV [disabled], BR= 3.4352 %
+23,16,-16         Z --> vtau vtaub         0.170283   GeV, BR= 6.80614 %
+23,-24,2,-1       Z --> W- u db            1.80479e-07(9.5278e-10) GeV [disabled], BR= 7.21367e-06 %
+23,-24,4,-3       Z --> W- c sb            1.55291e-07(7.91528e-10) GeV [disabled], BR= 6.20694e-06 %
+23,-24,12,-11     Z --> W- ve e+           6.01415e-08(3.16016e-10) GeV [disabled], BR= 2.40384e-06 %
+23,-24,14,-13     Z --> W- vmu mu+         6.00987e-08(3.18091e-10) GeV [disabled], BR= 2.40213e-06 %
+23,-24,16,-15     Z --> W- vtau tau+       4.80063e-08(2.43962e-10) GeV [disabled], BR= 1.9188e-06 %
+23,24,-2,1        Z --> W+ ub d            1.78131e-07(9.42431e-10) GeV [disabled], BR= 7.11985e-06 %
+23,24,-4,3        Z --> W+ cb s            1.5472e-07(7.91769e-10) GeV [disabled], BR= 6.1841e-06 %
+23,24,-12,11      Z --> W+ veb e-          5.9341e-08(3.14512e-10) GeV [disabled], BR= 2.37184e-06 %
+23,24,-14,13      Z --> W+ vmub mu-        5.98629e-08(3.15897e-10) GeV [disabled], BR= 2.3927e-06 %
+23,24,-16,15      Z --> W+ vtaub tau-      4.78572e-08(2.42539e-10) GeV [disabled], BR= 1.91284e-06 %
+----------------------------------------
+
+Decay table for : h0.
+Total width:                  0.00115394 GeV
+Flavour width:                0.00407 GeV
+----------------------------------------
+25,-24,2,-1       h0 --> W- u db           0.000136225(2.5149e-07) GeV, BR= 11.8051 %
+25,-24,4,-3       h0 --> W- c sb           0.000135484(2.45701e-07) GeV, BR= 11.7409 %
+25,-24,12,-11     h0 --> W- ve e+          4.55091e-05(8.32691e-08) GeV, BR= 3.94378 %
+25,-24,14,-13     h0 --> W- vmu mu+        4.54991e-05(8.31798e-08) GeV, BR= 3.94292 %
+25,-24,16,-15     h0 --> W- vtau tau+      4.49993e-05(8.17255e-08) GeV, BR= 3.8996 %
+25,24,-2,1        h0 --> W+ ub d           0.000136628(2.49528e-07) GeV, BR= 11.8401 %
+25,24,-4,3        h0 --> W+ cb s           0.00013524(2.46853e-07) GeV, BR= 11.7198 %
+25,24,-12,11      h0 --> W+ veb e-         4.55538e-05(8.32511e-08) GeV, BR= 3.94766 %
+25,24,-14,13      h0 --> W+ vmub mu-       4.5408e-05(8.32011e-08) GeV, BR= 3.93503 %
+25,24,-16,15      h0 --> W+ vtaub tau-     4.49484e-05(8.23298e-08) GeV, BR= 3.89519 %
+25,23,1,-1        h0 --> Z d db            5.40584e-05(1.04861e-07) GeV, BR= 4.68466 %
+25,23,2,-2        h0 --> Z u ub            4.23573e-05(8.19073e-08) GeV, BR= 3.67065 %
+25,23,3,-3        h0 --> Z s sb            5.40282e-05(1.0481e-07) GeV, BR= 4.68204 %
+25,23,4,-4        h0 --> Z c cb            4.09991e-05(7.8587e-08) GeV, BR= 3.55296 %
+25,23,5,-5        h0 --> Z b bb            3.84783e-05(7.35549e-08) GeV, BR= 3.3345 %
+25,23,11,-11      h0 --> Z e- e+           1.22539e-05(2.37011e-08) GeV, BR= 1.06192 %
+25,23,12,-12      h0 --> Z ve veb          2.41223e-05(4.68583e-08) GeV, BR= 2.09042 %
+25,23,13,-13      h0 --> Z mu- mu+         1.22553e-05(2.3741e-08) GeV, BR= 1.06204 %
+25,23,14,-14      h0 --> Z vmu vmub        2.4159e-05(4.68829e-08) GeV, BR= 2.0936 %
+25,23,15,-15      h0 --> Z tau- tau+       1.16316e-05(2.23162e-08) GeV, BR= 1.00799 %
+25,23,16,-16      h0 --> Z vtau vtaub      2.41072e-05(4.68136e-08) GeV, BR= 2.08911 %
+----------------------------------------
+
+Decay table for : t.
+Total width:                  1.53507 GeV
+Flavour width:                2 GeV
+----------------------------------------
+6,24,5            t --> W+ b               1.53507    GeV, BR= 100   %
+----------------------------------------
+
+Decay table for : tb.
+Total width:                  1.53507 GeV
+Flavour width:                2 GeV
+----------------------------------------
+-6,-24,-5         tb --> W- bb             1.53507    GeV, BR= 100   %
+----------------------------------------
+
+
+Process_Group::CalculateTotalXSec(): Calculate xs for '2_2__lightflavs__lightflavs__Z[v__v]' (Comix)
+Starting the calculation at 15:46:02. Lean back and enjoy ... .
