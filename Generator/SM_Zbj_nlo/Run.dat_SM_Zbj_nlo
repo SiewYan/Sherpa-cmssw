@@ -1,6 +1,6 @@
 (run){
   # general settings
-  EVENTS 100;
+  EVENTS 10;
 
   # me generator setup
   # Amegic
@@ -56,9 +56,9 @@
 }(run)
 
 (processes){
-  Process 901 901 -> 23[a] 900 901{NJET}
-  DecayOS 23[a] -> 91 91
-  #Order (*,0); #This ensures that all final state jets are produced via the strong interaction. 
+  Process 901 901 -> 23 900 901{NJET}
+  DecayOS 23 -> 91 91
+  Order (*,*); #This ensures that all final state jets are produced via the strong interaction. 
   CKKW sqr(QCUT/E_CMS);
   NLO_QCD_Mode MC@NLO {LJET};
   ME_Generator Amegic {LJET};

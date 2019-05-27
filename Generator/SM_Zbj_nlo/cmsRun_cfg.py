@@ -26,7 +26,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100)
+    input = cms.untracked.int32(10)
 )
 
 # Input source
@@ -41,7 +41,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py nevts:100'),
+    annotation = cms.untracked.string('SherpaGeneration/Generator/python/sherpa_SM_Zbj_nlo_MASTER_cff.py nevts:10'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
@@ -81,7 +81,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
             ' non-diffractive xsec = 17.0318 mb with nd factor = 0.3142.'),
         Run = cms.vstring(' (run){', 
             ' # general settings', 
-            ' EVENTS 100;', 
+            ' EVENTS 10;', 
             ' # me generator setup', 
             ' # Amegic', 
             ' ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;', 
