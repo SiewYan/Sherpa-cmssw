@@ -33,12 +33,20 @@
   #import param card:
   #UFO_PARAM_CARD ../data/darkPhoton/param_card_m40.dat;
 
+  #Width computation
+  HARD_DECAYS=1
+  STABLE[1023]=0
+  #WIDTH[1023]=0.000310895
+  STABLE[35]=0 	
+  HDH_SET_WIDTHS=1
+
 }(run)
 
 (processes){
   Process 93 93 -> 1023;
   Decay 1023 -> 13 -13;
   Order (*,*,*,*); 
+  Print_Graphs Graphs;
   # Syntax: "Order (QCD,QED,HIG,HIW);"
   #NLO_QCD_Mode MC@NLO;
   ME_Generator Comix;
@@ -95,10 +103,12 @@ block gaugemass
 
 decay 	6    1.50833649  # WT
 decay 	23   2.44140351  # WZ
-decay 	1023 3.108968e-04   # WZp
+#decay 	1023 3.108968e-04   # WZp
+decay  1023 0.00000001   # WZp
 decay 	24   2.04759951  # WW
 decay 	25   0.00282299  # WH
-decay 	35   6.110557e+08 # WHS
+#decay 	35   6.110557e+08 # WHS
+decay   35   0.000034343     # WHS
 
 }(ufo)
 
