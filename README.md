@@ -4,12 +4,12 @@
 
    Setup CMSSW environment
    ``` 
-   CMSSW_9_3_13: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-mlhled2
+   CMSSW_9_3_15: sherpa 2.2.6; openloops 2.0.0; blackhat 0.9.9-mlhled2
    ```
 
    ```
-   scram project CMSSW_9_3_13
-   cd CMSSW_9_3_13/src
+   scram project CMSSW_9_3_15
+   cd CMSSW_9_3_15/src
    cmsenv	 
    export TOPDIR=$PWD
    ```
@@ -23,7 +23,7 @@
    Clone the repository SherpaGeneration:
 
    ```
-   git clone https://github.com/SiewYan/SherpaGeneration.git -b EXO-2.2.5
+   git clone https://github.com/SiewYan/SherpaGeneration.git -b EXO-2.2.6
    cp $TOPDIR/GeneratorInterface/SherpaInterface/data/*SherpaLibs.sh $TOPDIR/SherpaGeneration/Generator/test/
    scram b -j8
    ```
@@ -42,8 +42,8 @@
    cd $TOPDIR/SherpaGeneration/Generator/
    mkdir sherpant
    ./fetchSherpa.sh
-   mv buildSherpant.sh SHERPA-MC-2.2.5
-   cd $TOPDIR/SherpaGeneration/Generator/SHERPA-MC-2.2.5
+   mv buildSherpant.sh SHERPA-MC-2.2.6
+   cd $TOPDIR/SherpaGeneration/Generator/SHERPA-MC-2.2.6
    ./buildSherpant.sh
    ```
    
