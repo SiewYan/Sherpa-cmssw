@@ -1,15 +1,20 @@
-# Sherpa-Generation
+# Sherpa-cmssw
+helping kits for sherpa event generation
 
 ## Setup
 
-   Setup CMSSW environment
-
-   ```
-   CMSSW_9_4_8: sherpa 2.2.4; openloops 1.3.1; blackhat 0.9.9-omkpbe4 0.9.9
-   ```
-   ``` 
-   CMSSW_10_3_0_pre5: sherpa 2.2.5; openloops 2.0.b; blackhat 0.9.9-omkpbe4
-   ```
+   Setup CMSSW environment, decide your release
+   
+   | release | master release  | Sherpa version | Openloop version |
+   | ------------- | ------------- | ------------- | ------------- |
+   | 71X  | [CMSSW_7_1_15](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.2.8 | 2.0.0 |
+   | 93X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17)  | 2.2.8 | 2.1.0 |
+   | 102X | [CMSSW_10_2_20](https://github.com/cms-sw/cmssw/releases/CMSSW_10_2_20) | 2.2.8 | 2.1.0 |
+   | 106X | [CMSSW_10_6_7](https://github.com/cms-sw/cmssw/releases/CMSSW_10_6_8)  | 2.2.8 | 2.1.0 |
+   | 110X | [CMSSW_11_0_0](https://github.com/cms-sw/cmssw/releases/CMSSW_11_0_0) | 2.2.8 | 2.1.0 |
+   
+  See more info see Gurpreet's [slide](https://indico.cern.ch/event/873792/contributions/3718710/attachments/1981426/3299820/Sherpa_status_CMS.pdf)
+  
 
    ```
    scram project CMSSW_X_Y_Z
@@ -24,7 +29,7 @@
    git cms-addpkg -q GeneratorInterface/SherpaInterface
    ```
 
-   checkout the RivetInterface:
+   checkout the RivetInterface (optional):
 
    ```
    git-cms-addpkg GeneratorInterface/RivetInterface
@@ -39,14 +44,15 @@
    Clone the repository SherpaGeneration:
 
    ```
-   git clone https://github.com/SiewYan/SherpaGeneration.git
+   git clone https://github.com/SiewYan/Sherpa-cmssw.git
    scram b -j8
    ```
    
-   The version of Sherpa Interfaced with the cmssw can be revealed
+   The version of Sherpa (Openloops) Interfaced with the cmssw can be identified by:
 
    ```
    scram tool info Sherpa
+   scram tool info OpenLoops
    ```
 
 ## Generate Sherpack on Z+jets
