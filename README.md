@@ -55,17 +55,15 @@ helping kits for sherpa event generation
    scram tool info OpenLoops
    ```
 
-## Generate Sherpack on Z+jets
+## Example of generating Events
 
    ### On head
 
    ```
-   cd SherpaGeneration/Generator/test
-   sh run_MakeSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV
-   sh run_PrepareSherpaLibs.sh ZtoEE_0j_OpenLoops_13TeV ExtendedSherpaWeights_cfi.py
-   sh run_GenerateEvent.sh sherpa_ZtoEE_0j_OpenLoops_13TeV
+   cd Sherpa-cmssw/Generator/test
+   ../scripts/generate.sh Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV
    ```
-
+    -- TO BE UPDATE --
    ### Using LSF Batch
 
    ```
