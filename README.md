@@ -55,7 +55,7 @@ helping kits for sherpa event generation
 
    ```
    cd Sherpa-cmssw/Generator/test
-   ../scripts/generate.sh Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV
+   ../scripts/event_generation.sh Run.dat_ZtoEE_0j_LO_OpenLoops_13TeV
    ```
     -- TO BE UPDATE --
    ### Using LSF Batch
