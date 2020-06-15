@@ -2,7 +2,7 @@
 
 set -e
 
-if [ `echo $1 | awk -F "_" '{print $1}'` != "Run.dat" ]; then
+if [[ `echo $1 | awk -F "_" '{print $1}'` != "Run.dat" ]] || [[ -z "$1" ]]; then
     echo "Please specify run card"
     exit 0
 fi
@@ -32,25 +32,16 @@ $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/PrepareSherpaLibs.sh \
     -p ${NAME}
     #-e $CMSSW_BASE/src/Sherpa-cmssw/Generator/SherpaGeneration/Generator/python/${SHERPA_CFI}
 
-#### STEP3 ####
-cp sherpa_${NAME}_MASTER_cff.py $LOCAL/../python
-cd $LOCAL/..
-scram b
-cd $LOCAL
+#generated sherpack:
+#sherpa_${NAME}_MASTER.tgz
+#generated python fragment:
+#sherpa_${NAME}_MASTER_cff.py
+#MD5 checksum file:
+#sherpa_${NAME}_MASTER.md5
 
-# conditions : https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions#Global_Tags_for_Monte_Carlo_Prod
-cmsDriver.py Sherpa-cmssw/Generator/python/sherpa_${NAME}_MASTER_cff.py \
-    --mc \
-    --step GEN,SIM \
-    --datatier GEN-SIM \
-    --eventcontent RAWSIM \
-    --conditions auto:mc \
-    --beamspot Realistic25ns13TeVEarly2018Collision \
-    --geometry DB:Extended \
-    --era Run2_2017 \
-    --python_filename cmsrun_${NAME}_MASTER_cfg.py \
-    -n 10 \
-    --customise_commands process.RandomNumberGeneratorService.generator.initialSeed=1111111 \
-    --no_exec
+#### STEP2 ####
+for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
+do
+    rm sherpa_${NAME}_$EXT
+done
 
-cmsRun cmsrun_${NAME}_MASTER_cfg.py
