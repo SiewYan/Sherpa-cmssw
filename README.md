@@ -7,7 +7,7 @@ helping kits for sherpa event generation
    
    | release | master release  | Sherpa version | Openloop version |
    | ------------- | ------------- | ------------- | ------------- |
-   | 71X  | [CMSSW_7_1_15](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.2.8 | 2.0.0 |
+   | 71X  | [CMSSW_7_1_45](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.2.8 | 2.0.0 |
    | 93X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17)  | 2.2.8 | 2.1.0 |
    | 102X | [CMSSW_10_2_20](https://github.com/cms-sw/cmssw/releases/CMSSW_10_2_20) | 2.2.8 | 2.1.0 |
    | 106X | [CMSSW_10_6_7](https://github.com/cms-sw/cmssw/releases/CMSSW_10_6_8)  | 2.2.8 | 2.1.0 |
