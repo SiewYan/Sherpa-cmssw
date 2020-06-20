@@ -16,6 +16,8 @@
   % the following phase space library has to be generated with the
   % corresponding HEFT (RUNDATA=Run.HEFT.dat) first;
   % they will appear in Process/Amegic/lib/libProc_fsrchannels4.so
+  OL_PREFIX="$CMSSW_BASE/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0";
+  OL_PARAMETERS install_path /lustre/cmswork/hoh/GenStudy/ggHHjets_18/CMSSW_10_6_7/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0;
   SHERPA_LDADD Proc_fsrchannels4;
 
   % collider setup
@@ -37,6 +39,7 @@
 
 (processes){
   Process 93 93 -> 25 25 93 93;
+  # (QCD,QED)
   Order (4,2);
   Integrator fsrchannels4;
   Enable_MHV 10; # initialises external process
