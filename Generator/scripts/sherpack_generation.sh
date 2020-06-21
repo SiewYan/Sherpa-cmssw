@@ -16,16 +16,16 @@ echo "Input process : $NAME"
 # hardcoded to use mpirun with 9 core; mpirun only use in creating libraries
 #echo " --> STEP1 : MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 9'"
 chmod +x $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh
-$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 9'
+$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 16'
 
 #### STEP2 ####
-for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
-do
-    if [ ! -e "sherpa_${NAME}_$EXT" ];then
-	echo "missing libraries file sherpa_${NAME}_$EXT"
-	exit 0
-    fi
-done
+#for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
+#do
+#    if [ ! -e "sherpa_${NAME}_$EXT" ];then
+#	echo "missing libraries file sherpa_${NAME}_$EXT"
+#	exit 0
+#    fi
+#done
 
 echo " --> STEP2 : PrepareSherpaLibs.sh -p $NAME"
 $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/PrepareSherpaLibs.sh \
@@ -40,8 +40,8 @@ $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/PrepareSherpaLibs.sh \
 #sherpa_${NAME}_MASTER.md5
 
 #### STEP2 ####
-for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
-do
-    rm sherpa_${NAME}_$EXT
-done
+#for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
+#do
+#    rm sherpa_${NAME}_$EXT
+#done
 
