@@ -48,7 +48,7 @@
   HDH_BR_WEIGHTS 0;
 
   % event output
-  EVENT_OUTPUT=LHEF[ggHH4b2j]
+  EVENT_OUTPUT=LHEF[ggHH4b2j_vbf]
 
 # Disable stability system to speed-up integration
 #  OL_PARAMETERS expert_mode 1 stability_mode 11
@@ -61,14 +61,14 @@
   Integrator fsrchannels4;
   Enable_MHV 10; # initialises external process
   Loop_Generator LOOPGEN;
-  Print_Graphs Graphs_ggHH4b2j;
+  Print_Graphs Graphs_ggHH4b2j_vbf;
   Integration_Error 0.10;
   End process;
 }(processes)
 
 % https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.8.html#Fastjet-selector
 # VBF phase space
-%(selector){
-%  FastjetSelector Mass(p[4]+p[5])>100. antikt 2 40. 0. 0.5 1
-%}(selector)
+(selector){
+  FastjetSelector Mass(p[4]+p[5])>100. antikt 2 40. 0. 0.5 1
+}(selector)
 
