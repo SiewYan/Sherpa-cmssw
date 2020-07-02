@@ -1,10 +1,23 @@
 (run){
   EVENTS 10;
 
-#Switch off Shower/Hadronization/MPI. Should be on
-#for full simulation
-  BEAM_REMNANTS 0; SHOWER_GENERATOR None;
-  MI_HANDLER None; FRAGMENTATION Off; ME_QED Off;
+  # Switch off Shower/Hadronization/MPI. Should be on
+  # for full simulation
+
+  % turn off non-perturbative intrinsic transverse momentum
+  BEAM_REMNANTS 0; 
+
+  % turn off parton shower
+  SHOWER_GENERATOR None;
+
+  % turn off multiple parton interaction
+  MI_HANDLER None; 
+
+  % turn off hadronization effects
+  FRAGMENTATION Off; 
+
+  % turn off resummed QED correction
+  ME_QED Off;
 
   % scale
   SCALES VAR{H_T2};
@@ -16,8 +29,8 @@
   % the following phase space library has to be generated with the
   % corresponding HEFT (RUNDATA=Run.HEFT.dat) first;
   % they will appear in Process/Amegic/lib/libProc_fsrchannels4.so
-  OL_PREFIX="$CMSSW_BASE/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0";
-  OL_PARAMETERS install_path /lustre/cmswork/hoh/GenStudy/ggHHjets_18/CMSSW_10_6_7/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0;
+  % OL_PREFIX="$CMSSW_BASE/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0";
+  % OL_PARAMETERS install_path /lustre/cmswork/hoh/GenStudy/ggHHjets_18/CMSSW_10_6_7/src/Sherpa-cmssw/Generator/OpenLoops-2.1.0;
   SHERPA_LDADD Proc_fsrchannels4;
 
   % collider setup
@@ -26,30 +39,23 @@
 
   % model parameters
   MASS[25] 125.; WIDTH[25] 0.;
-  MASS[5] 0.; WIDTH[6] 0.;
-  MASS[6] 173.; WIDTH[6] 0.;
+  MASS[5] 0.   ; WIDTH[5] 0.;
+  MASS[6] 173. ; WIDTH[6] 0.;
 
-  % https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.8.html#Hadron-decays
-  % force decay to b quarks
-  % HARD_DECAYS=1
-  % HDH_STATUS[25,5,-5]=2
-
-  % turnoff other higgs decays; but its contribute to overall cross section
-  % HDH_STATUS[25,2,-1]=0
-  % HDH_STATUS[25,4,-3]=0	
-  % HDH_STATUS[25,-2,1]=0	
-  % HDH_STATUS[25,-4,3]=0
+  % https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.8.html#Hard-decays
+  HARD_DECAYS On;
+  HDH_STATUS[25,5,-5] 2;
 
   % event output
-  EVENT_OUTPUT=LHEF[ggHH]
+  EVENT_OUTPUT=LHEF[ggHH4b2j]
 
 # Disable stability system to speed-up integration
 #  OL_PARAMETERS expert_mode 1 stability_mode 11
 }(run)
 
-
 (processes){
   Process 93 93 -> 25 25 93 93;
+
   # (QCD,QED)
   Order (4,2);
   Integrator fsrchannels4;
@@ -61,6 +67,7 @@
 }(processes)
 
 (selector){
+  % https://sherpa.hepforge.org/doc/SHERPA-MC-2.2.8.html#Fastjet-selector
   FastjetSelector Mass(p[4]+p[5])>100. antikt 2 40. 0. 0.5
 }(selector)
 
