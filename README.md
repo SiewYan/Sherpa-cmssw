@@ -5,13 +5,14 @@ helping kits for sherpa event generation
 
    Setup CMSSW environment, decide your release
    
-   | release | master release  | Sherpa version | Openloop version |
+   | release | master/pre release  | Sherpa version | Openloop version |
    | ------------- | ------------- | ------------- | ------------- |
    | 71X  | [CMSSW_7_1_45](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.2.8 | 2.0.0 |
    | 93X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17)  | 2.2.8 | 2.1.0 |
    | 102X | [CMSSW_10_2_20](https://github.com/cms-sw/cmssw/releases/CMSSW_10_2_20) | 2.2.8 | 2.1.0 |
    | 106X | [CMSSW_10_6_7](https://github.com/cms-sw/cmssw/releases/CMSSW_10_6_8)  | 2.2.8 | 2.1.0 |
    | 110X | [CMSSW_11_0_0](https://github.com/cms-sw/cmssw/releases/CMSSW_11_0_0) | 2.2.8 | 2.1.0 |
+   | 110X | [CMSSW_11_2_0_pre3](https://github.com/cms-sw/cmssw/releases/CMSSW_11_2_0_pre3) | 2.2.10 | 2.1.1 |
    
   See more info see Gurpreet's [slide](https://indico.cern.ch/event/873792/contributions/3718710/attachments/1981426/3299820/Sherpa_status_CMS.pdf)
   
