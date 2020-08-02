@@ -13,51 +13,52 @@
   ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;
   EVENT_GENERATION_MODE Weighted;
   LOOPGEN:=OpenLoops;
-  OL_PREFIX="/home/shoh/works/GEN/bootstrap/non-conda/OpenLoops-2.1.1";
-  OL_PARAMETERS install_path /home/shoh/works/GEN/bootstrap/non-conda/OpenLoops-2.1.1;
 
   % define custom particle container for easy process declaration
-  ## PARTICLE_CONTAINER 900 W 24 -24;
+  ##PARTICLE_CONTAINER 900 W 24 -24;
   PARTICLE_CONTAINER 901 lightflavs 1 -1 2 -2 3 -3 4 -4 21;
   NLO_CSS_DISALLOW_FLAVOUR 5;
 
   % particle properties (ME widths need to be zero if external)
-  WIDTH[24] 0;
+  WIDTH[24] 0; 
   MASS[25] 125.5; WIDTH[25] 0;
-  STABLE[15] 0; MASSIVE[15] 1;
+  STABLE[15] 1; MASSIVE[15] 1;
 
   % hard decays setup, specify allowed decay channels, ie.:
   % h->Wenu, h->Wmunu, h->Wtaunu, W->enu, W->munu, W->taunu, tau->enunu, tau->mununu + cc
   HARD_DECAYS On;
+  ##HARD_SPIN_CORRELATIONS=0;
 
   % Wplus (leptonic OFF ; hadronic ON)
   HDH_STATUS[25,24,-12,11]=0;
   HDH_STATUS[25,24,-14,13]=0;
   HDH_STATUS[25,24,-16,15]=0;
-  HDH_STATUS[25,24,2,-1]=2;
-  HDH_STATUS[25,24,4,-3]=2;
+  HDH_STATUS[25,24,-2,1]=2;
+  HDH_STATUS[25,24,-4,3]=2;
 
   % Wminus (leptonic ON ; hadronic OFF)
   HDH_STATUS[25,-24,12,-11]=2;
   HDH_STATUS[25,-24,14,-13]=2;
   HDH_STATUS[25,-24,16,-15]=2;
-  HDH_STATUS[25,-24,-2,1]=0;
-  HDH_STATUS[25,-24,-4,3]=0;
+  HDH_STATUS[25,-24,2,-1]=0;
+  HDH_STATUS[25,-24,4,-3]=0;
   
   % Wminus Associate (leptonic ON ; hadronic OFF)
   HDH_STATUS[-24,-12,11]=2;
   HDH_STATUS[-24,-14,13]=2;
   HDH_STATUS[-24,-16,15]=2;
-  HDH_STATUS[-24,-2,1]=0;
-  HDH_STATUS[-24,-4,3]=0;
+  ##HDH_STATUS[-24,-2,1]=0;
+  ##HDH_STATUS[-24,-4,3]=0;
 
   % Tau Decays
-  HDH_STATUS[15,16,-12,11]=2;
-  HDH_STATUS[15,16,-14,13]=2;
-  HDH_STATUS[-15,-16,12,-11]=2;
-  HDH_STATUS[-15,-16,14,-13]=2;
-  DECAY_TAU_HARD 1;
+  ##HDH_STATUS[15,16,-12,11]=2;
+  ##HDH_STATUS[15,16,-14,13]=2;
+  ##HDH_STATUS[-15,-16,12,-11]=2;
+  ##HDH_STATUS[-15,-16,14,-13]=2;
+  ##DECAY_TAU_HARD 1;
   HDH_BR_WEIGHTS 0;
+
+  STORE_DECAY_RESULTS=1;
 
   % event output
   EVENT_OUTPUT=LHEF[WHSSjj_minus]
