@@ -5,7 +5,7 @@ helping kits for sherpa event generation
 
    Setup CMSSW environment, decide your release
    
-   | release | master/pre release  | Sherpa version | Openloop version |
+   | release cycle | master/pre release  | Sherpa version | Openloop version |
    | ------------- | ------------- | ------------- | ------------- |
    | 71X  | [CMSSW_7_1_45](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.2.8 | 2.0.0 |
    | 93X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17)  | 2.2.8 | 2.1.0 |
