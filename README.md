@@ -20,7 +20,7 @@ helping kits for sherpa event generation
    | ------------- | ------------- | ------------- |
    | 102X | [CMSSW_10_2_24](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_2_24.html)| 2.1.0 |
    | 106X | [CMSSW_10_6_7](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_6_15.html)  | 2.1.0 |
-   | 110X | [CMSSW_11_2_0_pre3](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_11/CMSSW_11_2_0_pre3.html)| 2.1.1 |
+   | 112X | [CMSSW_11_2_0_pre3](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_11/CMSSW_11_2_0_pre3.html)| 2.1.1 |
    
    
    
