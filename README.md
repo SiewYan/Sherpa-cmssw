@@ -1,5 +1,5 @@
 # Sherpa-cmssw
-helping kits for sherpa event generation
+helper script for sherpa event generation
 
 ## Setup
 
