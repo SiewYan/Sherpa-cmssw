@@ -2,11 +2,6 @@
 helper script for sherpa event generation
 
 ## Sherpa, Openloops version
-
-
-   Setup CMSSW environment:
-   
-   - Sherpa version: 2.2.10
    
    | release cycle | master/pre release  | Sherpa version | Openloop version | Remark |
    | ------------- | ------------- | ------------- | ------------- | ------------- |
