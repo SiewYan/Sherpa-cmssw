@@ -1,31 +1,29 @@
 # Sherpa-cmssw
 helper script for sherpa event generation
 
-## Setup
+## Sherpa, Openloops version
+
 
    Setup CMSSW environment:
-   - Sherpa version: 2.2.8
-   
-   | release cycle | master/pre release | Openloop version |
-   | ------------- | ------------- | ------------- |
-   | 71X  | [CMSSW_7_1_45](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45)  | 2.0.0 |
-   | 93X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17)  | 2.1.0 |
-   | 102X | [CMSSW_10_2_20](https://github.com/cms-sw/cmssw/releases/CMSSW_10_2_20)| 2.1.0 |
-   | 106X | [CMSSW_10_6_7](https://github.com/cms-sw/cmssw/releases/CMSSW_10_6_8)  | 2.1.0 |
-   | 110X | [CMSSW_11_0_0](https://github.com/cms-sw/cmssw/releases/CMSSW_11_0_0)  | 2.1.0 |
    
    - Sherpa version: 2.2.10
    
-   | release cycle | master/pre release  | Openloop version |
-   | ------------- | ------------- | ------------- |
-   | 102X | [CMSSW_10_2_24](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_2_24.html)| 2.1.0 |
-   | 106X | [CMSSW_10_6_15](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_6_15.html)  | 2.1.0 |
-   | 112X | [CMSSW_11_2_0_pre3](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_11/CMSSW_11_2_0_pre3.html)| 2.1.1 |
-   
+   | release cycle | master/pre release  | Sherpa version | Openloop version | Remark |
+   | ------------- | ------------- | ------------- | ------------- | ------------- |
+   | 7_1_X  | [CMSSW_7_1_45](https://github.com/cms-sw/cmssw/releases/CMSSW_7_1_45) | 2.2.8 | 2.0.0 | OpenLoop version 2.0.0 due to old git version |
+   | 9_3_X  | [CMSSW_9_3_17](https://github.com/cms-sw/cmssw/releases/CMSSW_9_3_17) | 2.2.8 | 2.1.0 | |
+   | 10_2_X | [CMSSW_10_2_20](https://github.com/cms-sw/cmssw/releases/CMSSW_10_2_20) | 2.2.8 | 2.1.0 | |
+   |        | [CMSSW_10_2_24](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_2_24.html) | 2.2.10 | 2.1.0 | |
+   | 10_6_X | [CMSSW_10_6_7](https://github.com/cms-sw/cmssw/releases/CMSSW_10_6_8) | 2.2.8 | 2.1.0 | |
+   |        | [CMSSW_10_6_15](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_10/CMSSW_10_6_15.html) | 2.2.10 | 2.1.0 | |
+   | 11_0_X | [CMSSW_11_0_0](https://github.com/cms-sw/cmssw/releases/CMSSW_11_0_0) | 2.2.8 | 2.1.0 | |
+   | 11_2_X | [CMSSW_11_2_0_pre3](https://cmssdt.cern.ch/SDT/ReleaseNotes/CMSSW_11/CMSSW_11_2_0_pre3.html) | 2.2.10 | 2.1.1 | |
    
    
   See more info see Gurpreet's [slide](https://indico.cern.ch/event/873792/contributions/3718710/attachments/1981426/3299820/Sherpa_status_CMS.pdf)
   
+
+## Setup
 
    ```
    scram project CMSSW_X_Y_Z
