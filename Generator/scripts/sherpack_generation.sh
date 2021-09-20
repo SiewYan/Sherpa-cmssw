@@ -14,9 +14,9 @@ echo "Input process : $NAME"
 
 #### STEP1 ####
 # hardcoded to use mpirun with 9 core; mpirun only use in creating libraries
-#echo " --> STEP1 : MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 9'"
+echo " --> STEP1 : MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 10'"
 chmod +x $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh
-$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 20'
+$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 10'
 
 #### STEP2 ####
 #for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
@@ -27,9 +27,9 @@ $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NA
 #    fi
 #done
 
-echo " --> STEP2 : PrepareSherpaLibs.sh -p $NAME"
-$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/PrepareSherpaLibs.sh \
-    -p ${NAME}
+#echo " --> STEP2 : PrepareSherpaLibs.sh -p $NAME"
+#$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/PrepareSherpaLibs.sh \
+#    -p ${NAME}
     #-e $CMSSW_BASE/src/Sherpa-cmssw/Generator/SherpaGeneration/Generator/python/${SHERPA_CFI}
 
 #generated sherpack:
