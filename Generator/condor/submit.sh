@@ -21,8 +21,8 @@ NCPU="10"
 cat > submit_${NAME}.jdl <<EOF
 universe                = vanilla
 should_transfer_files   = YES
-when_to_transfer_output = ON_EXIT_OR_EVICT
-transfer_input_files    = $PWD/${CARD}, ${HOME}/.gitconfig
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = {0}/submit.tgz, ${HOME}/.gitconfig
 transfer_output_files   = sherpa_${NAME}_libs.tgz, sherpa_${NAME}_crdE.tgz, sherpa_${NAME}_crss.tgz, sherpa_${NAME}_logL.tgz, sherpa_${NAME}_migr.tgz
 executable              = ${CMSSW_BASE}/src/Sherpa-cmssw/Generator/condor/sherpa.sh
 arguments               = ${NAME} ${CMSSW_VERSION} ${NCPU}

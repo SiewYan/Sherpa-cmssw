@@ -2,21 +2,27 @@
 
 set -e
 
+NAME=`echo $1 | awk -F "Run.dat_" '{print $2}'`
+NCPU=$2
+
 if [[ `echo $1 | awk -F "_" '{print $1}'` != "Run.dat" ]] || [[ -z "$1" ]]; then
     echo "Please specify run card"
+    echo "Example: generate_sherpack.sh Run.dat_NAME NCPU (if any)"
     exit 0
 fi
 
-LOCAL=$PWD
+if [[ -z "$1" ]]; then
+    NCPU="4"
+fi
 
-NAME=`echo $1 | awk -F "Run.dat_" '{print $2}'`
-echo "Input process : $NAME"
+echo " --> Input process : $NAME"
+echo " --> Input Ncpu    : $NCPU"
+echo " --> RUNNING"
+echo "${CMSSW_BASE}/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p ${NAME} -o LBCR -v -m mpirun -M \"-n ${NCPU}\""
 
-#### STEP1 ####
-# hardcoded to use mpirun with 9 core; mpirun only use in creating libraries
-echo " --> STEP1 : MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 10'"
 chmod +x $CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh
-$CMSSW_BASE/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p $NAME -o LBCR -v -m mpirun -M '-n 10'
+${CMSSW_BASE}/src/GeneratorInterface/SherpaInterface/data/MakeSherpaLibs.sh -p ${NAME} -o LBCR -v -m mpirun -M "-n ${NCPU}"
+
 
 #### STEP2 ####
 #for EXT in crss.tgz crdE.tgz logL.tgz libs.tgz migr.tgz
